@@ -10,14 +10,13 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 export default function Signup() {
        const user=useSelector((state)=>state.userinfo);
-       console.log("from sign in page info ",user);
        const navigate=useNavigate();
   const [newdata,setnewdata]=useState(user)
    const nav=()=>[
        navigate("/")
    ]
    const savecurrentuser=async()=>{
-       try{   console.log("fwfwfer",newdata)
+       try{   
               const url = `${process.env.REACT_APP_BACKENDURL}/api/signup`;
               const  data  = await axios.post(url,{
                 user:user.email,
@@ -38,8 +37,6 @@ export default function Signup() {
     <div className={style.signform} >
        <div className={style.formstyle}>
     <h1>Sign up</h1>
-    <h1>Name : {user.firstname}</h1>
-    <h1>Email : {user.email}</h1>
     <Stack component="form" >
        <Grid container  onSubmit={savecurrentuser}>
        {/* <Grid  item xs={12}sm={6} md={6}display="flex" justifyContent="center" alignItems="center" padding={2} color="yellow">  <TextField   id="outlined-basic" size="small" label="Firstname" value={user.firstname} onChange={signupchange}name="firstname"variant="outlined" disabled/>

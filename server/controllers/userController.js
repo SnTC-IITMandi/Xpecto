@@ -34,16 +34,37 @@ exports.saveuserDetail=async(req,res)=>{
     const s= await User.updateOne(myquery,newvalues);
     // console.log("datasaved successfully",newvalues);
     // console.log(s);
+    console.log("useremial",useremail)
     res.status(200).json({
         status:"success",
         message:"Data saved Successfuly"
     })
   }
   catch(err){
-    console.log(err);
-    res.status(400).json({
+    res.status(200).json({
       status:"failed",
       message:"Error Occure please try Again"
     })
   }
+}
+
+exports.profiledata=async(req,res)=>{
+     try {
+      const useremail =req.body.user;
+      console.log(useremail ,"nvuebver")
+      const  data = await User.findOne({"email":useremail});
+      const context ={
+        status:"success",
+        data:data
+      }
+      res.status(200).json({
+        status:"success",
+        data:data
+      })
+    } catch (error) {
+      res.status(400).json({
+        status:"failed",
+        message:"Error Occure please try Again"
+      })
+     }
 }

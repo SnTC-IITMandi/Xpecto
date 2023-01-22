@@ -23,11 +23,10 @@ export default function  Home(){
     const navigate=useNavigate();
 	const [isuser ,setisuser]=useState(false);
 	const [bool,setbool]=useState(false);
-	const getUser = async (props) => {
+	const getUser = async () => {
 		try {
 			const url = `${process.env.REACT_APP_BACKENDURL}/auth/login`;
 			const { data } = await axios.get(url, { withCredentials: true });
-			console.log("data after signin ",data)
             setnewuser(newuser=>({
 				...newuser,
 				email:data.data.email,
@@ -35,10 +34,8 @@ export default function  Home(){
 				image:data.data.image,
 				firstname:data.data.firstName
 			}));
-			console.log("newuser ",newuser);
 			const d = (newuser)=>{ dispatch(action.changeuserinfo(newuser));}
 			d(newuser);
-			console.log("Now user info from redux ",user);
 		     setisuser(true);
 			if(data.isnewuser){
               setbool(true);
@@ -142,8 +139,9 @@ export default function  Home(){
         <Button variant="outlined" onClick={googleAuth} sx={{ m: 5 }}>Sign in google</Button>
         <Button variant="outlined" onClick={googleAuth} sx={{ m: 5 }}>Login with google</Button>
         <Button variant="outlined" onClick={logout} sx={{ m: 5 }}>Logout</Button>
-		<h1>Name : {user.firstname}</h1>
-		<h1>Name : {user.email}</h1>
+		<Button onClick={()=>{
+			navigate("/profile")
+		}}>profile</Button>
 		{/* <button onClick={(nav())}> got got </button> */}
 		<div>
 			<Razorpay/>

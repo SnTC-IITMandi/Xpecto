@@ -52,6 +52,13 @@ const UserSchema = new mongoose.Schema({
     referralCode: {
         type: String,
     },
+    registerevents:[
+     {
+        eventname:{
+            type:String,
+        }
+     }
+    ]
 });
 
  
