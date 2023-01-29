@@ -1,12 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import SidebarMenu from "../component/SidebarMenu/SidebarMenu";
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import styles from "./EventsHomePage.module.css";
-// import { oldeventdetails } from "./oldevents";
 import axios from "axios";
 import EventCardNew from "./EventCardNew";
 import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
-import { oldeventdetails } from "./oldevents";
+import { ThreeCircles } from "react-loader-spinner";
 import Layout from "../component/Layout/Layout";
 const EventsHomePage = () => {
     const [events, setevents] = useState({ data: [] });
@@ -20,6 +18,7 @@ const EventsHomePage = () => {
                 ...events,
                 data: data.data.data,
             }));
+            // console.log(data.data.data)
             setIsLoading((prev) => false);
         } catch (err) {
             setIsLoading((prev) => true);
@@ -27,13 +26,11 @@ const EventsHomePage = () => {
         }
     };
     useEffect(() => {
-        // to update scrollbar
         window.scrollTo({ top: window.scrollY + 1, behavior: "smooth" });
     }, [events]);
 
     useEffect(() => {
         getAllevents();
-        // setevents({data:oldeventdetails})
     }, []);
 
     return (
@@ -48,15 +45,45 @@ const EventsHomePage = () => {
                         <FixedLogo />
                     </div>
                 </div>
-                <main className={styles["main"]}>
-                    {!isLoading ? (
-                        events.data.map((element) => {
-                            return <EventCardNew data={element} />;
-                        })
-                    ) : (
-                        <div className={styles["loading"]}>LOADING ...</div>
-                    )}
-                </main>
+                {!isLoading ? (
+                    <main className={styles["main"]}>
+                        {events.data.map((element) => {
+                            return element.isLive ? (
+                                <EventCardNew
+                                    data={element}
+                                    key={element.name}
+                                />
+                            ) : (
+                                ""
+                            );
+                        })}
+                        {events.data.map((element) => {
+                            return !element.isLive ? (
+                                <EventCardNew
+                                    data={element}
+                                    key={element.name}
+                                />
+                            ) : (
+                                ""
+                            );
+                        })}
+                    </main>
+                ) : (
+                    <div className={styles["loading"]}>
+                        <ThreeCircles
+                            height="150px"
+                            width="150px"
+                            color="#fff"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                            ariaLabel="three-circles-rotating"
+                            outerCircleColor=""
+                            innerCircleColor="#F8C456"
+                            middleCircleColor=""
+                        />
+                    </div>
+                )}
             </Layout>
         </>
     );
