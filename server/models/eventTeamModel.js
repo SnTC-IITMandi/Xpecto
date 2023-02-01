@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 // User
 const teamSchema = new mongoose.Schema({
   creater: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Player",
+    type: mongoose.Schema.ObjectId,
+    ref: "UserDetails",
     required: [true, "A creater must be required for a team"],
   },
   teamName: {
@@ -32,12 +32,12 @@ const teamSchema = new mongoose.Schema({
   },
   players: [
     {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Schema.ObjectId,
       ref: "UserDetails",
     },
   ],
   game: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.ObjectId,
     ref: "Event",
   },
 });
@@ -50,6 +50,9 @@ teamSchema.pre(/^find/, function (next) {
   this.populate({
     path: "game",
     select: "-__v",
+  });
+  this.populate({
+    path: "creater",
   });
   next();
 });

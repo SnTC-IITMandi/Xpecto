@@ -19,21 +19,21 @@ import LinkedIn from "@mui/icons-material/LinkedIn";
 import Instagram from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
 import { GoogleLogin } from "@react-oauth/google";
-import Modal from "@mui/material/Modal";
+import { Modal, Box } from "@mui/material";
 import LayoutPage from "../component/Layout/Layout";
 import Contact from "../component/Contact/Contact";
 import { motion } from "framer-motion";
 export default function Home() {
-  const user = useSelector((state) => state.userinfo);
-  const dispatch = useDispatch();
-  const [newuser, setnewuser] = useState(user);
+  // const user = useSelector((state) => state.userinfo);
+  // const dispatch = useDispatch();
+  // const [newuser, setnewuser] = useState(user);
   const navigate = useNavigate();
   const [isuser, setisuser] = useState(false);
   const [bool, setbool] = useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  
+
   const loginSuccessHandler = async (cred) => {
     try {
       const resp = await axios.post(
@@ -150,8 +150,7 @@ export default function Home() {
             fixedLogoVisible && styles["back-to-top-visible"]
           }`}
         >
-          
-            <BackToTop />
+          <BackToTop />
         </HashLink>
         <Sidebar />
         <div
@@ -174,13 +173,13 @@ export default function Home() {
             alt="plusplusgraphic"
           />
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               type: "spring",
               bounce: 0.4,
               duration: 1,
-              delay:1,
+              delay: 1,
             }}
             className={styles["mainlogo"]}
           >
@@ -259,7 +258,6 @@ export default function Home() {
           ) : (
             ""
           )}
-        
         </div>
         <motion.div
           initial={{ y: 150 }}
@@ -307,7 +305,14 @@ export default function Home() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
           <GoogleLogin
             onSuccess={(credentialResponse) => {
               loginSuccessHandler(credentialResponse.credential);
@@ -316,7 +321,7 @@ export default function Home() {
               console.log("Login Failed");
             }}
           />
-        </div>
+        </Box>
       </Modal>
     </>
   );
