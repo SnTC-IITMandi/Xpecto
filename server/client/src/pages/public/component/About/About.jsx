@@ -13,8 +13,8 @@ const navigate = useNavigate();
       const top = rect.top;
       const bottom = rect.bottom;
       const mid = top + current.clientHeight / 2;
-      const midIntersecting = top <= 2 && mid <= window.screen.height && mid >= 0;
-      const isElementVisible = top <= 2 && bottom >= window.screen.height;
+      const midIntersecting = top <= 100 && mid <= window.screen.height && mid >= 0;
+      const isElementVisible = top <= 100 && bottom >= window.screen.height;
       if (midIntersecting || isElementVisible) {
         document.body.style.setProperty(
           "--current-page-color",
@@ -33,7 +33,7 @@ const navigate = useNavigate();
     <>
       <div
         ref={aboutRef}
-        data-color="#1AF527"
+        data-color="#ffbb3c"
         className={styles["aboutcontainer"]}
       >
         <p className={styles["heading1"]}>ABOUT US</p>

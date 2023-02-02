@@ -1,5 +1,5 @@
 :root {
-    --main-color: #f8c456;
+    --event-card-main-color: #f8c456;
 }
 
 .card-outer-container * {
@@ -9,8 +9,10 @@
 }
 .card-outer-container {
     padding: 5px;
-    background-color: var(--main-color);
+    background-color: var(--event-card-main-color);
 
+
+box-shadow: 0 0 50px -20px #f8e856;
     /* width: 500px; */
     margin: 0;
 }
@@ -21,9 +23,9 @@
     background-color: #0d0e10;
     /* width: 100%; */
     /* height: 100%; */
-    color: var(--main-color);
+    color: var(--event-card-main-color);
 
-    /* outline: var(--main-color);
+    /* outline: var(--event-card-main-color);
   outline-width: 5px;
   outline-style: solid; */
     border-top-right-radius: 10px;
@@ -71,6 +73,7 @@
 
 .live {
     color: aliceblue;
+    box-shadow:0 0 15px 0 red;
     background-color: red;
     padding: 5px 10px;
     margin: 5px;

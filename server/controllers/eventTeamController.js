@@ -40,7 +40,10 @@ exports.getAllRegisteredTeamsByGameId = catchAsync(async (req, res, next) => {
 });
 exports.getAllRegisteredTeamsByCreaterId = catchAsync(
   async (req, res, next) => {
-    const teams = await Team.find({ creater: req.params.id });
+    const teams = await Team.find({ creater: req.params.id })
+      .populate("creater")
+      .populate("players")
+      .populate("game");
     res.status(201).json({
       status: "success",
       result: teams.length,
@@ -136,7 +139,7 @@ exports.addPlayer = catchAsync(async (req, res, next) => {
     }
   });
   if (isPlayerPresent) {
-    return next(new AppError("User already present in a team", 400));
+    return next(new AppError("You are already present in this team", 400));
   }
 
   currentGameId = team.game;
@@ -149,7 +152,7 @@ exports.addPlayer = catchAsync(async (req, res, next) => {
     if (currentGame.teamMaxSize < curentTeamSize + 1) {
       return next(
         new AppError(
-          `User cannot be added because Max Event Team Size is ${currentGame.teamMaxSize} and Curently in a Team ${curentTeamSize} members are present`,
+          `You cannot be added to the team because Max Event Team Size is ${currentGame.teamMaxSize}`,
           400
         )
       );
@@ -266,12 +269,40 @@ exports.teamForCurrentEvent = catchAsync(async (req, res, next) => {
     const eventId = req.params.eventId;
 
     const game = await Team.findOne({ game: eventId, players: creatorId });
-console.log(creatorId, eventId)
+    console.log(creatorId, eventId);
     res.status(200).json({
       status: "success",
       game,
     });
   } catch (error) {
+    res.status(404).json({
+      status: "failed",
+      message: error,
+    });
+  }
+});
+
+exports.deleteTeam = catchAsync(async (req, res, next) => {
+  try {
+    const team = await Team.findById(req.params.teamId).populate("creater");
+    if (!team) {
+      return next(new AppError("No Team Found by this ID"));
+    }
+
+    if (team.creater._id != req.user.id) {
+      return next(
+        new AppError("You are not creater so you can't delete the team")
+      );
+    }
+    const deletedTeam = await Team.findByIdAndDelete(req.params.teamId);
+
+    res.status(200).json({
+      status: "success",
+      data: {
+        deletedTeam,
+      },
+    });
+  } catch (err) {
     res.status(404).json({
       status: "failed",
       message: error,

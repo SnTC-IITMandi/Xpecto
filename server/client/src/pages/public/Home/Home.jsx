@@ -34,6 +34,9 @@ export default function Home() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const loginSuccessHandler = async (cred) => {
     try {
       const resp = await axios.post(
@@ -125,6 +128,7 @@ export default function Home() {
       window.removeEventListener("scroll", scrollEvent, { passive: true });
     };
   }, [mainLogoRef]);
+
   // console.log("usedetail " ,user)
   return (
     <>
@@ -155,7 +159,7 @@ export default function Home() {
         <Sidebar />
         <div
           ref={mainLogoRef}
-          data-color="#faea09"
+          data-color="#f8e856"
           className={styles["section1"]}
           id="#"
 
@@ -167,11 +171,11 @@ export default function Home() {
           //   duration: 1,
           // }}
         >
-          <img
+          {/* <img
             className={styles["section1-plus"]}
             src={`${process.env.PUBLIC_URL}/home/plusplus.svg`}
             alt="plusplusgraphic"
-          />
+          /> */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -249,12 +253,12 @@ export default function Home() {
             alt="bottomleftgraphic"
           />
           {!loadingUser && !isAuthenticated ? (
-            <img
+            <button
               className={styles["section1-register"]}
-              src={`${process.env.PUBLIC_URL}/home/register.svg`}
-              alt="register"
               onClick={handleOpen}
-            />
+            >
+              SIGN IN
+            </button>
           ) : (
             ""
           )}
@@ -300,6 +304,7 @@ export default function Home() {
         <Razorpay />
       </div> */}
       <Modal
+        sx={{ backdropFilter: "blur(25px)" }}
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -314,6 +319,9 @@ export default function Home() {
           }}
         >
           <GoogleLogin
+            size="large"
+            width="300"
+            useOneTap
             onSuccess={(credentialResponse) => {
               loginSuccessHandler(credentialResponse.credential);
             }}

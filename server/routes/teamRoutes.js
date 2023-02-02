@@ -29,7 +29,10 @@ router.post("/create", eventTeamController.create);
 router.post("/add-player", eventTeamController.addPlayer);
 router.post("/add-game", eventTeamController.addGame);
 router.post("/code", eventTeamController.getCode);
-router.get("/teamForCurrentEvent/:eventId", eventTeamController.teamForCurrentEvent)
-
+router.get(
+  "/teamForCurrentEvent/:eventId",
+  eventTeamController.teamForCurrentEvent
+);
+router.delete("/deleteTeam/:teamId", eventTeamController.deleteTeam);
 
 module.exports = router;

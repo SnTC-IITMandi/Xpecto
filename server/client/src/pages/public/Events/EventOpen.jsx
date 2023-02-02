@@ -105,9 +105,12 @@ export default function EventOpen(props) {
 
   const MESSAGE =
     !loadingUser && !isAuthenticated ? (
-      <h3>
-        Please <button onClick={handleOpen}>SignIn</button> to register for the
-        team event.
+      <h3 className={styles["sign-in-message"]}>
+        Please Sign In to register for the Event.
+        <br />
+        <button onClick={handleOpen} className={styles["create-team-register"]}>
+          Sign In
+        </button>
       </h3>
     ) : null;
 
@@ -118,7 +121,10 @@ export default function EventOpen(props) {
           isRegisteredForEvent ? (
             "Already Registered for Event"
           ) : (
-            <button onClick={handleEventTeamOpen}>
+            <button
+              className={styles["create-team-register"]}
+              onClick={handleEventTeamOpen}
+            >
               Register for the Event
             </button>
           )
@@ -172,7 +178,6 @@ export default function EventOpen(props) {
         };
     }
   };
-  const [teamFormIsValid, setTeamFormIsValid] = useState(false);
   const [eventTeamNameState, eventTeamNameDispatch] = useReducer(
     teamNameReducer,
     { value: "", isValid: undefined }
@@ -239,7 +244,12 @@ export default function EventOpen(props) {
   return (
     <>
       <Sidebar />
-      <LayoutPage dataColor="#F8C456">
+      <div
+        className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
+      >
+        <FixedLogo />
+      </div>
+      <LayoutPage dataColor="#5dffde">
         {isEventDataLoading ||
         loadingUser ||
         eventdata === undefined ||
@@ -254,7 +264,7 @@ export default function EventOpen(props) {
               visible={true}
               ariaLabel="three-circles-rotating"
               outerCircleColor=""
-              innerCircleColor="#F8C456"
+              innerCircleColor="#5dffde"
               middleCircleColor=""
             />
           </div>
@@ -264,100 +274,109 @@ export default function EventOpen(props) {
               <h1 className={styles["events-page-heading"]}>
                 {eventdata.name}
               </h1>
-              <h2 className={styles["events-page-teamsize"]}>
-                {MESSAGE}
-                {eventRegister}
-                <br />
-                <br />
-                Team Size:{" "}
-                {`${eventdata.teamMinSize} ${
-                  eventdata.teamMinSize !== eventdata.teamMaxSize
-                    ? ` - ${eventdata.teamMaxSize}`
-                    : ""
-                }`}
-              </h2>
 
-              <div
-                className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
-              >
-                <FixedLogo />
+              <div className={styles["container-flex"]}>
+                <div className={styles["event-main-description"]}>
+                  <h2 className={styles["events-page-teamsize"]}>
+                    {MESSAGE}
+                    {eventRegister}
+                    <br />
+                    Team Size :{" "}
+                    {`${eventdata.teamMinSize} ${
+                      eventdata.teamMinSize !== eventdata.teamMaxSize
+                        ? ` - ${eventdata.teamMaxSize}`
+                        : ""
+                    }`}
+                  </h2>
+
+                  {/* main */}
+                  <div className={styles["main"]}>
+                    <p className={styles["eventdesc"]}>
+                      {eventdata.description}
+                    </p>
+                    <br />
+                    <div className={styles["event-btns"]}>
+                      {eventdata.rulebook_link ? (
+                        <a
+                          className={styles["eventbutton"]}
+                          href={eventdata.rulebook_link}
+                          target="_blank"
+                        >
+                          Rulebook
+                        </a>
+                      ) : (
+                        ""
+                      )}
+                      <br />
+                      {eventdata.problemset_link ? (
+                        <a
+                          className={styles["eventbutton"]}
+                          href={eventdata.problemset_link}
+                          target="_blank"
+                        >
+                          Problem Statement
+                        </a>
+                      ) : (
+                        ""
+                      )}
+                      <br />
+                      {eventdata.submission_link ? (
+                        <a
+                          className={styles["eventbutton"]}
+                          href={eventdata.submission_link}
+                          target="_blank"
+                        >
+                          Submission Link
+                        </a>
+                      ) : (
+                        ""
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles["prizes-container"]}>
+                  <h2 className={styles["eventprize"]}>
+                    Prizes Worth <br />
+                    Rs{" "}
+                    {eventdata.prices.first +
+                      eventdata.prices.second +
+                      eventdata.prices.third +
+                      eventdata.prices.fourth}
+                  </h2>
+                  <div className={styles["prizes"]}>
+                    {eventdata.prices.first != "" && (
+                      <p className={styles["prize"]}>
+                        First <br />
+                        Rs {eventdata.prices.first}
+                      </p>
+                    )}
+                    {eventdata.prices.second != "" && (
+                      <p className={styles["prize"]}>
+                        Second <br /> Rs {eventdata.prices.second}
+                      </p>
+                    )}
+                    {eventdata.prices.third != "" && (
+                      <p className={styles["prize"]}>
+                        Third
+                        <br />
+                        Rs {eventdata.prices.third}
+                      </p>
+                    )}
+                    {eventdata.prices.fourth ? (
+                      <p className={styles["prize"]}>
+                        Fourth
+                        <br />
+                        Rs {eventdata.prices.fourth}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </div>
               </div>
             </div>
-            {/* main */}
-            <div className={styles["main"]}>
-              <p className={styles["eventdesc"]}>{eventdata.description}</p>
-              <br />
-              <div className={styles["event-btns"]}>
-                {eventdata.rulebook_link ? (
-                  <a
-                    className={styles["eventbutton"]}
-                    href={eventdata.rulebook_link}
-                    target="_blank"
-                  >
-                    Rulebook
-                  </a>
-                ) : (
-                  ""
-                )}
-                <br />
-                {eventdata.problemset_link ? (
-                  <a
-                    className={styles["eventbutton"]}
-                    href={eventdata.problemset_link}
-                    target="_blank"
-                  >
-                    Problem Statement
-                  </a>
-                ) : (
-                  ""
-                )}
-                <br />
-                {eventdata.submission_link ? (
-                  <a
-                    className={styles["eventbutton"]}
-                    href={eventdata.submission_link}
-                    target="_blank"
-                  >
-                    Submission Link
-                  </a>
-                ) : (
-                  ""
-                )}
-              </div>
 
-              <br />
-              <h2 className={styles["eventprize"]}>
-                Prizes Worth : Rs.{" "}
-                {eventdata.prices.first +
-                  eventdata.prices.second +
-                  eventdata.prices.third +
-                  eventdata.prices.fourth}
-              </h2>
-              <div className={styles["prizes"]}>
-                {eventdata.prices.first != "" && (
-                  <p className={styles["prize"]}>
-                    First : Rs. {eventdata.prices.first}
-                  </p>
-                )}
-                {eventdata.prices.second != "" && (
-                  <p className={styles["prize"]}>
-                    Second : Rs. {eventdata.prices.second}
-                  </p>
-                )}
-                {eventdata.prices.third != "" && (
-                  <p className={styles["prize"]}>
-                    Third : Rs. {eventdata.prices.third}
-                  </p>
-                )}
-                {eventdata.prices.fourth ? (
-                  <p className={styles["prize"]}>
-                    Fourth : Rs. {eventdata.prices.fourth}
-                  </p>
-                ) : (
-                  ""
-                )}
-              </div>
-            </div>
             <Modal
               sx={{ backdropFilter: "blur(20px)" }}
               open={openEventTeam}
@@ -371,7 +390,6 @@ export default function EventOpen(props) {
                   top: "50%",
                   left: "50%",
                   transform: "translate(-50%, -50%)",
-                  
                 }}
               >
                 <div
@@ -414,6 +432,7 @@ export default function EventOpen(props) {
             </Modal>
 
             <Modal
+              sx={{ backdropFilter: "blur(25px)" }}
               open={open}
               onClose={handleClose}
               aria-labelledby="modal-modal-title"
@@ -428,6 +447,9 @@ export default function EventOpen(props) {
                 }}
               >
                 <GoogleLogin
+                  size="large"
+                  width="300"
+                  useOneTap
                   onSuccess={(credentialResponse) => {
                     loginSuccessHandler(credentialResponse.credential);
                   }}
