@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useReducer } from "react";
+import React, { useState, useReducer, useMemo } from "react";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Sidebar from "../../../components/Sidebar/Sidebar";
@@ -30,6 +30,15 @@ export default function EventOpen(props) {
   const [isRegisteredForEvent, setIsRegisteredForEvent] = useState(false);
   const [isRegisteredForEventLoading, setIsRegisteredForEventLoading] =
     useState(true);
+  const pricesWorth = useMemo(() => {
+    if (!eventdata?.prices) return 0;
+    return (
+      eventdata.prices.first +
+      eventdata.prices.second +
+      eventdata.prices.third +
+      eventdata.prices.fourth
+    );
+  }, [eventdata]);
 
   const getevent = async () => {
     try {
@@ -336,14 +345,14 @@ export default function EventOpen(props) {
                 </div>
 
                 <div className={styles["prizes-container"]}>
-                  <h2 className={styles["eventprize"]}>
+                 {pricesWorth !== 0 && <h2 className={styles["eventprize"]}>
                     Prizes Worth <br />
                     Rs{" "}
                     {eventdata.prices.first +
                       eventdata.prices.second +
                       eventdata.prices.third +
                       eventdata.prices.fourth}
-                  </h2>
+                  </h2>}
                   <div className={styles["prizes"]}>
                     {eventdata.prices.first != "" && (
                       <p className={styles["prize"]}>
