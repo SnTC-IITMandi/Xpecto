@@ -1,12 +1,12 @@
 :root {
-  --main-color: #f8c456;
+  --event-main-color: #f8c456;
 }
 
 .events-page-heading {
   position: relative;
   margin: 0;
   padding: 0;
-  color: var(--main-color);
+  color: var(--event-main-color);
   text-align: left;
   font-size: 5rem;
   padding: 2.5rem;
@@ -15,6 +15,8 @@
   z-index: 50;
   margin-top: 50px;
   font-family: 'Android 101';
+  text-shadow: 0 0 7.5px #f8c430;
+
 }
 
 @media (max-width: 600px) {

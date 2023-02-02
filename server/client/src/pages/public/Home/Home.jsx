@@ -19,21 +19,24 @@ import LinkedIn from "@mui/icons-material/LinkedIn";
 import Instagram from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
 import { GoogleLogin } from "@react-oauth/google";
-import Modal from "@mui/material/Modal";
+import { Modal, Box } from "@mui/material";
 import LayoutPage from "../component/Layout/Layout";
 import Contact from "../component/Contact/Contact";
 import { motion } from "framer-motion";
 export default function Home() {
-  const user = useSelector((state) => state.userinfo);
-  const dispatch = useDispatch();
-  const [newuser, setnewuser] = useState(user);
+  // const user = useSelector((state) => state.userinfo);
+  // const dispatch = useDispatch();
+  // const [newuser, setnewuser] = useState(user);
   const navigate = useNavigate();
   const [isuser, setisuser] = useState(false);
   const [bool, setbool] = useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const loginSuccessHandler = async (cred) => {
     try {
       const resp = await axios.post(
@@ -125,6 +128,7 @@ export default function Home() {
       window.removeEventListener("scroll", scrollEvent, { passive: true });
     };
   }, [mainLogoRef]);
+
   // console.log("usedetail " ,user)
   return (
     <>
@@ -150,13 +154,12 @@ export default function Home() {
             fixedLogoVisible && styles["back-to-top-visible"]
           }`}
         >
-          
-            <BackToTop />
+          <BackToTop />
         </HashLink>
         <Sidebar />
         <div
           ref={mainLogoRef}
-          data-color="#faea09"
+          data-color="#f8e856"
           className={styles["section1"]}
           id="#"
 
@@ -168,19 +171,19 @@ export default function Home() {
           //   duration: 1,
           // }}
         >
-          <img
+          {/* <img
             className={styles["section1-plus"]}
             src={`${process.env.PUBLIC_URL}/home/plusplus.svg`}
             alt="plusplusgraphic"
-          />
+          /> */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.5, }}
+            initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{
               type: "spring",
               bounce: 0.4,
               duration: 1,
-              delay:1,
+              delay: 1,
             }}
             className={styles["mainlogo"]}
           >
@@ -250,16 +253,15 @@ export default function Home() {
             alt="bottomleftgraphic"
           />
           {!loadingUser && !isAuthenticated ? (
-            <img
+            <button
               className={styles["section1-register"]}
-              src={`${process.env.PUBLIC_URL}/home/register.svg`}
-              alt="register"
               onClick={handleOpen}
-            />
+            >
+              SIGN IN
+            </button>
           ) : (
             ""
           )}
-        
         </div>
         <motion.div
           initial={{ y: 150 }}
@@ -302,13 +304,24 @@ export default function Home() {
         <Razorpay />
       </div> */}
       <Modal
+        sx={{ backdropFilter: "blur(25px)" }}
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div>
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+          }}
+        >
           <GoogleLogin
+            size="large"
+            width="300"
+            useOneTap
             onSuccess={(credentialResponse) => {
               loginSuccessHandler(credentialResponse.credential);
             }}
@@ -316,7 +329,7 @@ export default function Home() {
               console.log("Login Failed");
             }}
           />
-        </div>
+        </Box>
       </Modal>
     </>
   );

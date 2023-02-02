@@ -9,7 +9,7 @@ const catchAsync = require("../utils/catchAsync");
 
 function generateCode(id) {
   const randomNumber = crypto.randomBytes(6).toString("hex");
-  return `code-${id}-${Date.now()}-${randomNumber}`;
+  return `${id}-${Date.now()}-${randomNumber}`;
 }
 
 exports.attachCurrentUser = (req, res, next) => {
@@ -18,7 +18,7 @@ exports.attachCurrentUser = (req, res, next) => {
 };
 
 exports.getAll = catchAsync(async (req, res, next) => {
-  const teams = await Team.find();
+  const teams = await Team.find().populate("creater");
   res.status(201).json({
     status: "success",
     result: teams.length,
@@ -40,7 +40,10 @@ exports.getAllRegisteredTeamsByGameId = catchAsync(async (req, res, next) => {
 });
 exports.getAllRegisteredTeamsByCreaterId = catchAsync(
   async (req, res, next) => {
-    const teams = await Team.find({ creater: req.params.id });
+    const teams = await Team.find({ creater: req.params.id })
+      .populate("creater")
+      .populate("players")
+      .populate("game");
     res.status(201).json({
       status: "success",
       result: teams.length,
@@ -97,6 +100,8 @@ exports.create = catchAsync(async (req, res, next) => {
     players: req.user.id,
   });
 
+  const popTeam = await Team.findById(newTeam._id).populate("creater");
+
   // add team id in user model
   const userDb = await User.findById(req.user.id);
   userDb.headOfTeams.push(newTeam.id);
@@ -105,7 +110,7 @@ exports.create = catchAsync(async (req, res, next) => {
   res.status(201).json({
     status: "success",
     data: {
-      newTeam,
+      popTeam,
       code,
     },
   });
@@ -134,7 +139,7 @@ exports.addPlayer = catchAsync(async (req, res, next) => {
     }
   });
   if (isPlayerPresent) {
-    return next(new AppError("User already present in a team", 400));
+    return next(new AppError("You are already present in this team", 400));
   }
 
   currentGameId = team.game;
@@ -147,7 +152,7 @@ exports.addPlayer = catchAsync(async (req, res, next) => {
     if (currentGame.teamMaxSize < curentTeamSize + 1) {
       return next(
         new AppError(
-          `User cannot be added because Max Event Team Size is ${currentGame.teamMaxSize} and Curently in a Team ${curentTeamSize} members are present`,
+          `You cannot be added to the team because Max Event Team Size is ${currentGame.teamMaxSize}`,
           400
         )
       );
@@ -195,7 +200,7 @@ exports.addGame = catchAsync(async (req, res, next) => {
   }
 
   curentTeamSize = team.players.length;
-
+  console.log(req.body);
   // check if game can be added in a team
   currentGame = await Game.findById(req.body.gameId);
   if (currentGame.teamMaxSize < curentTeamSize) {
@@ -256,4 +261,51 @@ exports.getCode = catchAsync(async (req, res, next) => {
       expiresInMin: expireTimeInminutes,
     },
   });
+});
+
+exports.teamForCurrentEvent = catchAsync(async (req, res, next) => {
+  try {
+    const creatorId = req.user.id;
+    const eventId = req.params.eventId;
+
+    const game = await Team.findOne({ game: eventId, players: creatorId });
+    console.log(creatorId, eventId);
+    res.status(200).json({
+      status: "success",
+      game,
+    });
+  } catch (error) {
+    res.status(404).json({
+      status: "failed",
+      message: error,
+    });
+  }
+});
+
+exports.deleteTeam = catchAsync(async (req, res, next) => {
+  try {
+    const team = await Team.findById(req.params.teamId).populate("creater");
+    if (!team) {
+      return next(new AppError("No Team Found by this ID"));
+    }
+
+    if (team.creater._id != req.user.id) {
+      return next(
+        new AppError("You are not creater so you can't delete the team")
+      );
+    }
+    const deletedTeam = await Team.findByIdAndDelete(req.params.teamId);
+
+    res.status(200).json({
+      status: "success",
+      data: {
+        deletedTeam,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: "failed",
+      message: error,
+    });
+  }
 });
