@@ -24,7 +24,7 @@ const teamSchema = new mongoose.Schema({
   },
   expires: {
     type: Number,
-    default: Date.now() + 10 * 60 + 1000,
+    default: Date.now() + 7*24*60*60 + 1000,
   },
   isValid: {
     type: Boolean,
