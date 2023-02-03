@@ -43,7 +43,7 @@ const Contact = () => {
       //   data-color="#ed7014"
       //   data-color="#00b4d8"
       data-color="#00ddcc"
-      initial={{ y: 150 }}
+      initial={{ y: 0 }}
       whileInView={{ y: 0 }}
       transition={{
         // type: "spring",
