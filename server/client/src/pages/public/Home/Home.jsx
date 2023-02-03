@@ -264,7 +264,7 @@ export default function Home() {
           )}
         </div>
         <motion.div
-          initial={{ y: 150 }}
+          initial={{ y: 0 }}
           whileInView={{ y: 0 }}
           transition={{
             // type: "spring",

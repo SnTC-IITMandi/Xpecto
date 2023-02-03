@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 378.26 93.32">
     <defs>
-        <style>.cls-1,.cls-2{fill:var(--current-page-color);}.cls-2{font-size:60.37px;font-family:Android101, "Android
+        <style>.cls-1,.cls-2{fill:var(--current-page-color); transition: fill ease-in-out
+            0.5s}.cls-2{font-size:60.37px;font-family:Android101, "Android
             101";}
 
             </style>

@@ -52,6 +52,10 @@
 }
 .navbar-icons svg {
   color: black;
+  transition: transform ease-in-out 0.1s;
+}
+.navbar-icons:hover svg {
+  transform: scale(1.2);
 }
 .scrollbar-container {
   box-sizing: content-box;
