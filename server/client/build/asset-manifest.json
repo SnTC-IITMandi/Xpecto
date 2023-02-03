@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bffaa41e.css",
-    "main.js": "/static/js/main.100c0427.js",
+    "main.js": "/static/js/main.6e6de4c0.js",
     "static/media/background.jpg": "/static/media/background.abe945b916887ee0ac0c.jpg",
     "static/media/Android_101.ttf": "/static/media/Android_101.1bc6db32b397d97d519e.ttf",
     "static/media/xpecto-logo.svg": "/static/media/xpecto-logo.a908fe39bbe846c9715f23a6f737ee40.svg",
@@ -11,10 +11,10 @@
     "static/media/navbar-middle.svg": "/static/media/navbar-middle.d7cf56dc6e2e1df4e12b036f9fa32e99.svg",
     "static/media/backtop-btn.svg": "/static/media/backtop-btn.db4352da913c78e1f15904a88982d832.svg",
     "main.bffaa41e.css.map": "/static/css/main.bffaa41e.css.map",
-    "main.100c0427.js.map": "/static/js/main.100c0427.js.map"
+    "main.6e6de4c0.js.map": "/static/js/main.6e6de4c0.js.map"
   },
   "entrypoints": [
     "static/css/main.bffaa41e.css",
-    "static/js/main.100c0427.js"
+    "static/js/main.6e6de4c0.js"
   ]
 }
