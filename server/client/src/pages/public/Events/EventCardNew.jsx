@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./EventCardNew.module.css";
 const EventCardNew = (props) => {
     return (
@@ -20,12 +21,12 @@ const EventCardNew = (props) => {
                 ) : (
                     ""
                 )}
-                <a
-                    href={`/events/${props.data._id}`}
+                <Link
+                    to={`/events/${props.data._id}`}
                     className={styles["more-button"]}
                 >
                     MORE {">>>"}
-                </a>
+                </Link>
             </div>
         </div>
     );

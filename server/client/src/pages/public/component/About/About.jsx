@@ -3,6 +3,7 @@ import styles from"./About.module.css"
 import { Button, Grid } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 import {motion} from"framer-motion";
+import { Link } from 'react-router-dom';
 export default function About() {
   const aboutRef = useRef(null);
 const navigate = useNavigate();
@@ -71,9 +72,9 @@ const navigate = useNavigate();
         </motion.p>
         <Grid container  >
 
-       <Grid  item xs={12}sm={6} md={6}display="flex" justifyContent="center" alignItems="center" ><a href='/oldsponsors' className={styles["just"]} >Past Sponsors</a> 
+       <Grid  item xs={12}sm={6} md={6}display="flex" justifyContent="center" alignItems="center" ><Link to='/oldsponsors' className={styles["just"]} >Past Sponsors</Link> 
 </Grid>
-       <Grid  item xs={12}sm={6} md={6}display="flex" justifyContent="center" alignItems="center"> <a href='/oldevents' className={styles["just"]}>Past Events</a> 
+       <Grid  item xs={12}sm={6} md={6}display="flex" justifyContent="center" alignItems="center"> <Link to='/oldevents' className={styles["just"]}>Past Events</Link> 
 </Grid>
        
 
