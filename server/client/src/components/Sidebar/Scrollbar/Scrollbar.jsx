@@ -11,7 +11,7 @@ function Scrollbar() {
 
     const scrollFunc = () => {
       const height = document.body.scrollHeight;
-      if (height - window.innerHeight < 0) {
+      if (height - window.innerHeight <= 0) {
         scrollbar.style.height = "0px";
         return;
       }

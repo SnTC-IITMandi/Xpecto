@@ -40,6 +40,11 @@ export default function EventOpen(props) {
     );
   }, [eventdata]);
 
+  useEffect(() => {
+    // fire window scroll event to update scrollbar
+    window.dispatchEvent(new Event("scroll"));
+  }, [eventdata]);
+
   const getevent = async () => {
     try {
       const url = `${process.env.REACT_APP_BACKENDURL}/api/events/${params.id}`;
@@ -233,7 +238,6 @@ export default function EventOpen(props) {
   useEffect(() => {
     (async function () {
       try {
-        console.log(eventdata);
         const url = `${process.env.REACT_APP_BACKENDURL}/api/eventTeam`;
         const resp = await axios.get(
           `${url}/teamForCurrentEvent/${eventdata._id}`
@@ -348,10 +352,7 @@ export default function EventOpen(props) {
                  {pricesWorth !== 0 && <h2 className={styles["eventprize"]}>
                     Prizes Worth <br />
                     Rs{" "}
-                    {eventdata.prices.first +
-                      eventdata.prices.second +
-                      eventdata.prices.third +
-                      eventdata.prices.fourth}
+                    {pricesWorth}
                   </h2>}
                   <div className={styles["prizes"]}>
                     {eventdata.prices.first != "" && (
