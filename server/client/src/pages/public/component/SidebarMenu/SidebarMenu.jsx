@@ -4,7 +4,7 @@ import styles from "./SidebarMenu.module.css";
 import axios from "axios";
 function SidebarMenu() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [prevColor, setPrevColor] = useState("#faea09");
+  const [prevColor, setPrevColor] = useState(undefined);
 
   useEffect(() => {
     if (sidebarOpen) {
