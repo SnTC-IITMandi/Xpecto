@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
+
+import CountdownTimer from './CountdownTimer';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Button } from "@mui/material";
@@ -130,6 +132,11 @@ export default function Home() {
   }, [mainLogoRef]);
 
   // console.log("usedetail " ,user)
+
+  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+
+  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
   return (
     <>
       <LayoutPage>
@@ -191,6 +198,8 @@ export default function Home() {
               src={`${process.env.PUBLIC_URL}/home/mainlogo.svg`}
               alt="XpectoLogo"
             />
+            
+            <CountdownTimer targetDate={dateTimeAfterThreeDays} />
             {/* temporary solution start */}
             <div className={styles["social-icons"]}>
               <a
