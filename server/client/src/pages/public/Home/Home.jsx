@@ -14,6 +14,7 @@ import Sidebar from "../../../components/Sidebar/Sidebar";
 import { useDispatch } from "react-redux";
 import * as action from "../../../actions/index";
 import About from "../component/About/About";
+import Ambassador from "../component/Ambassador/Ambassador";
 import { useRef } from "react";
 import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
 import { ReactComponent as BackToTop } from "../../../svg/backtop-btn.svg";
@@ -284,6 +285,19 @@ export default function Home() {
           id="about"
         >
           <About />
+        </motion.div>
+        <motion.div
+          initial={{ y: 0 }}
+          whileInView={{ y: 0 }}
+          transition={{
+            // type: "spring",
+            // bounce: 0.4,
+            duration: 1,
+          }}
+          className={styles["section1"]}
+          id="about"
+        >
+          <Ambassador />
         </motion.div>
         <div className={styles["section2"]} id="contact">
           <Contact />
