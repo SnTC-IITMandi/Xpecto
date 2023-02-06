@@ -16,6 +16,10 @@ box-shadow: 0 0 50px -20px #f8e856;
     /* width: 500px; */
     margin: 0;
 }
+.card-outer-container:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 100px -20px #f8e856;
+}
 .card-inner-container {
     position: relative;
     margin: 0;
