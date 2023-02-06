@@ -37,6 +37,11 @@ const OurTeamPage = () => {
   const [teamMembers, setTeamMembers] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // fire window scroll event to update scrollbar
+    window.dispatchEvent(new Event("scroll"));
+  }, [teamMembers]);
+
   const getAllteamMembers = async () => {
     try {
       const url = `${process.env.REACT_APP_BACKENDURL}/api/teamMembers/`;

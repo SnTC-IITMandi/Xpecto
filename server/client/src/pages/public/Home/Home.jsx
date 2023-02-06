@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
+
+import CountdownTimer from './CountdownTimer';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Button } from "@mui/material";
@@ -12,6 +14,7 @@ import Sidebar from "../../../components/Sidebar/Sidebar";
 import { useDispatch } from "react-redux";
 import * as action from "../../../actions/index";
 import About from "../component/About/About";
+import Ambassador from "../component/Ambassador/Ambassador";
 import { useRef } from "react";
 import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
 import { ReactComponent as BackToTop } from "../../../svg/backtop-btn.svg";
@@ -130,6 +133,11 @@ export default function Home() {
   }, [mainLogoRef]);
 
   // console.log("usedetail " ,user)
+
+  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+
+  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
   return (
     <>
       <LayoutPage>
@@ -191,6 +199,8 @@ export default function Home() {
               src={`${process.env.PUBLIC_URL}/home/mainlogo.svg`}
               alt="XpectoLogo"
             />
+            
+            <CountdownTimer targetDate={dateTimeAfterThreeDays} />
             {/* temporary solution start */}
             <div className={styles["social-icons"]}>
               <a
@@ -264,7 +274,7 @@ export default function Home() {
           )}
         </div>
         <motion.div
-          initial={{ y: 150 }}
+          initial={{ y: 0 }}
           whileInView={{ y: 0 }}
           transition={{
             // type: "spring",
@@ -275,6 +285,19 @@ export default function Home() {
           id="about"
         >
           <About />
+        </motion.div>
+        <motion.div
+          initial={{ y: 0 }}
+          whileInView={{ y: 0 }}
+          transition={{
+            // type: "spring",
+            // bounce: 0.4,
+            duration: 1,
+          }}
+          className={styles["section1"]}
+          id="about"
+        >
+          <Ambassador />
         </motion.div>
         <div className={styles["section2"]} id="contact">
           <Contact />

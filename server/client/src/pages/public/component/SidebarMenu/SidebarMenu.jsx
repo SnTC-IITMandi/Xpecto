@@ -4,7 +4,7 @@ import styles from "./SidebarMenu.module.css";
 import axios from "axios";
 function SidebarMenu() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [prevColor, setPrevColor] = useState("#faea09");
+  const [prevColor, setPrevColor] = useState(undefined);
 
   useEffect(() => {
     if (sidebarOpen) {
@@ -57,6 +57,10 @@ function SidebarMenu() {
       console.log(err);
     }
   };
+  const linkClicked = (e) => {
+    e.stopPropagation();
+    setSidebarOpen(false);
+  };
   useEffect(() => {
     getprofiledata();
   }, []);
@@ -103,6 +107,7 @@ function SidebarMenu() {
         className={`${styles.sidebarBackdrop} ${
           sidebarOpen ? styles.sidebarBackdropOpen : ""
         }`}
+        onClick={() => setSidebarOpen(false)}
       >
         <div
           className={`${styles.sidebarContainer} ${
@@ -114,7 +119,7 @@ function SidebarMenu() {
             style={{ "--animation-order": 1 }}
             className={styles.sidebarBtn}
           >
-            <Link smooth to="/#" onClick={() => setSidebarOpen(false)}>
+            <Link smooth to="/#" onClick={linkClicked}>
               HOME
             </Link>
           </button>
@@ -122,7 +127,7 @@ function SidebarMenu() {
             style={{ "--animation-order": 2 }}
             className={styles.sidebarBtn}
           >
-            <Link smooth to="/#about" onClick={() => setSidebarOpen(false)}>
+            <Link smooth to="/#about" onClick={linkClicked}>
               ABOUT US
             </Link>
           </button>
@@ -130,7 +135,7 @@ function SidebarMenu() {
             style={{ "--animation-order": 3 }}
             className={styles.sidebarBtn}
           >
-            <Link smooth to="/#contact" onClick={() => setSidebarOpen(false)}>
+            <Link smooth to="/#contact" onClick={linkClicked}>
               CONTACT US
             </Link>
           </button>
@@ -138,7 +143,7 @@ function SidebarMenu() {
             style={{ "--animation-order": 3 }}
             className={styles.sidebarBtn}
           >
-            <Link smooth to="/profile" onClick={() => setSidebarOpen(false)}>
+            <Link smooth to="/profile" onClick={linkClicked}>
               PROFILE
             </Link>
           </button> */}
@@ -153,7 +158,7 @@ function SidebarMenu() {
               style={{ "--animation-order": 5 }}
               className={styles.sidebarBtn}
             >
-              <Link smooth to="/profile" onClick={() => setSidebarOpen(false)}>
+              <Link smooth to="/profile" onClick={linkClicked}>
                 PROFILE
               </Link>
             </button>
@@ -188,7 +193,7 @@ function SidebarMenu() {
             style={{ "--animation-order": 6 }}
             className={styles.sidebarBtn}
           >
-            <Link smooth to="/ourteam" onClick={() => setSidebarOpen(false)}>
+            <Link smooth to="/ourteam" onClick={linkClicked}>
               MEET OUR TEAM
             </Link>
           </button>

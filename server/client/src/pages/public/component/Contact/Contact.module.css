@@ -5,6 +5,7 @@
 }
 .contact-container {
   box-sizing: border-box;
+  padding-top: 30px;
   padding-bottom: 200px;
 }
 .card-inner {

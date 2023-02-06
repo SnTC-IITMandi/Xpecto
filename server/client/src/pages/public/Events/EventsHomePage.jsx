@@ -26,7 +26,8 @@ const EventsHomePage = () => {
         }
     };
     useEffect(() => {
-        window.scrollTo({ top: window.scrollY + 1, behavior: "smooth" });
+        // fire window scroll event to update scrollbar
+        window.dispatchEvent(new Event("scroll"));
     }, [events]);
 
     useEffect(() => {
