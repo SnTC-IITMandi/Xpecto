@@ -123,10 +123,10 @@ exports.addPlayer = catchAsync(async (req, res, next) => {
   // check if code is valid
   const team = await Team.findOne({
     code: teamCode,
-    expiry: { $gt: Date.now() },
+    // expiry: { $gt: Date.now() },
   });
   if (!team) {
-    return next(new AppError("Invalid Code or Code has expired", 400));
+    return next(new AppError("Invalid Code", 400));
   }
 
   // check if player already in a team

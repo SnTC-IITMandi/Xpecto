@@ -5,6 +5,7 @@ import Grid from "@mui/system/Unstable_Grid/Grid";
 import { useState } from "react";
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
+import Layout from "../component/Layout/Layout";
 
 export default function Sponsor() {
 
@@ -24,15 +25,7 @@ export default function Sponsor() {
       >
         <FixedLogo />
       </div>
-      <div
-        data-color="#f8e856"
-        style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/home/background.jpg)`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <Layout dataColor="#faea09">
         <div className={styles["container"]}>
           <p className={styles["heading1"]}>Our Past Sponsors</p>
           {spontype.map((spon) => {
@@ -75,7 +68,7 @@ export default function Sponsor() {
             );
           })}
         </div>
-      </div>
+      </Layout>
     </>
   );
 }
