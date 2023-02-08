@@ -1,0 +1,108 @@
+:root {
+  --main-faq-color: #00b4d8 !important;
+}
+
+.container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-heading {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: var(--main-faq-color);
+  text-align: left;
+  font-size: 4rem;
+  padding: 2.5rem;
+  margin-left: 3rem;
+  letter-spacing: 2.5px;
+  z-index: 50;
+  margin-top: 50px;
+  font-family: "Android 101";
+}
+
+@media (max-width: 600px) {
+  .main-heading {
+    font-size: 3rem;
+    padding: 2rem;
+    margin-left: 1.5rem;
+  }
+}
+
+.fixed-logo {
+  display: none;
+  position: fixed;
+  top: 10px;
+  height: 170px;
+  aspect-ratio: 1 / 1;
+  z-index: 1000;
+  right: 25px;
+  top: 10px;
+
+  font-family: "Android 101" !important;
+}
+
+.fixed-logo-visible {
+  display: unset;
+}
+.loading {
+  /* font-size: 2.5rem;
+    color: var(--main-faq-color);
+    font-weight: bold; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.faq-container{
+  cursor: pointer;
+  user-select: none;
+  height:auto;
+  width:100%;
+  --faq-clip-size: 30px;
+  color: white;
+  background-color: var(--main-faq-color);
+  padding: 30px 30px;
+  border: 3px solid var(--main-faq-color);
+  -webkit-clip-path: polygon(0 0, 0 calc(100% - var(--faq-clip-size)), var(--faq-clip-size) 100%, 100% 100%, 100% var(--faq-clip-size), calc(100% - var(--faq-clip-size)) 0);
+  clip-path: polygon(0 0, 0 calc(100% - var(--faq-clip-size)), var(--faq-clip-size) 100%, 100% 100%, 100% var(--faq-clip-size), calc(100% - var(--faq-clip-size)) 0);  
+    backdrop-filter: blur(5px);
+  transition: background-color 0.8s;
+  background: transparent;
+}
+.faq-open, .faq-container:hover{
+  background: transparent;
+}
+.faq-question{
+  text-align: center;
+}
+.faq-answer{
+  max-height: 0px;
+  /* text-align: left; */
+  transition: all 0.4s;
+  overflow: hidden;
+  transform: translateY(10px);
+  opacity: 0;
+}
+.faq-answer-visible{
+  overflow: auto;
+  max-height: 1000px;
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .fixed-logo {
+    height: 150px;
+  }
+  .main-heading {
+    font-size: 3rem;
+  }
+}

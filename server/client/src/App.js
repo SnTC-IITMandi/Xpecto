@@ -20,6 +20,7 @@ import Profile from "./pages/public/component/profile/Profile";
 import EventOpen from "./pages/public/Events/EventOpen";
 import ScrollToTop from "./ScrollToTop";
 import CreatedTeamPage from "./pages/public/component/profile/CreatedTeamPage";
+import FaqPage from "./pages/public/Faq/FaqPage";
 function App() {
   return (
     <div className="App">
@@ -33,6 +34,7 @@ function App() {
             <Route path="/oldevents" element={<Event />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/faq" element={<FaqPage />} />
             <Route
               path="/profile/created-teams/:id"
               element={<CreatedTeamPage />}
