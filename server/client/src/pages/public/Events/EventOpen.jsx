@@ -349,31 +349,42 @@ export default function EventOpen(props) {
                 </div>
 
                 <div className={styles["prizes-container"]}>
-                 {pricesWorth !== 0 && <h2 className={styles["eventprize"]}>
-                    Prizes Worth <br />
-                    Rs{" "}
-                    {pricesWorth}
-                  </h2>}
+                  {(pricesWorth !== 0 || eventdata.prizesWorth) && (
+                    <h2 className={styles["eventprize"]}>
+                      Prizes Worth <br />
+                      Rs{" "}
+                      {eventdata.prizesWorth
+                        ? eventdata.prizesWorth
+                        : pricesWorth}
+                    </h2>
+                  )}
                   <div className={styles["prizes"]}>
-                    {eventdata.prices.first != "" && (
-                      <p className={styles["prize"]}>
-                        First <br />
-                        Rs {eventdata.prices.first}
-                      </p>
-                    )}
-                    {eventdata.prices.second != "" && (
-                      <p className={styles["prize"]}>
-                        Second <br /> Rs {eventdata.prices.second}
-                      </p>
-                    )}
-                    {eventdata.prices.third != "" && (
-                      <p className={styles["prize"]}>
-                        Third
-                        <br />
-                        Rs {eventdata.prices.third}
-                      </p>
-                    )}
-                    {eventdata.prices.fourth ? (
+                    {eventdata.prices.first != "" &&
+                      eventdata.prices.first &&
+                      eventdata.prices.first !== 0 && (
+                        <p className={styles["prize"]}>
+                          First <br />
+                          Rs {eventdata.prices.first}
+                        </p>
+                      )}
+                    {eventdata.prices.second != "" &&
+                      eventdata.prices.second &&
+                      eventdata.prices.second !== 0 && (
+                        <p className={styles["prize"]}>
+                          Second <br /> Rs {eventdata.prices.second}
+                        </p>
+                      )}
+                    {eventdata.prices.third != "" &&
+                      eventdata.prices.third &&
+                      eventdata.prices.third !== 0 && (
+                        <p className={styles["prize"]}>
+                          Third
+                          <br />
+                          Rs {eventdata.prices.third}
+                        </p>
+                      )}
+                    {eventdata.prices.fourth &&
+                    eventdata.prices.fourth !== 0 ? (
                       <p className={styles["prize"]}>
                         Fourth
                         <br />

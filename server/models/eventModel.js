@@ -100,6 +100,9 @@ const eventSchema = mongoose.Schema({
     },
   },
 
+  prizesWorth: {
+    type: Number,
+  },
   coordinators: [
     {
       name: {

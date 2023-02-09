@@ -32,8 +32,13 @@ body {
 }
 @media (max-width: 700px) {
   .mainlogo {
-    width: 75%;
-  }
+    width: 60%;
+    transform: translateY(10px);
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+}
   .social-icons {
     transform: scale(1.25) translateY(25px);
     -webkit-transform: scale(1.25) translateY(25px);
@@ -53,11 +58,16 @@ body {
   height: 100%;
   margin: 0 10px;
   cursor: pointer;
+  transform: translateY(-25px);
+  -webkit-transform: translateY(-25px);
+  -moz-transform: translateY(-25px);
+  -ms-transform: translateY(-25px);
+  -o-transform: translateY(-25px);
 }
 .home-icons svg {
   color: white;
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  width: 90%;
 }
 .section1-plus {
   position: absolute;
@@ -91,16 +101,17 @@ body {
 }
 
 .section1-register {
+  z-index: 1000000;
   position: absolute;
   font-size: 1.75rem;
   right: 7.5vw;
   /* top: max(10vh, 150px); */
-  top: 150px;
+  top: 75px;
   width: 200px;
   /* width: max(15vw, 200px); */
   color: black;
-  background-color: #ffbb3c;
-  border: 2px solid #ffbb3c;
+  background-color: #f8e856;
+  border: 2px solid #f8e856;
   padding: 10px 15px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -114,11 +125,11 @@ body {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   font-weight: normal;
-  box-shadow: 0 0 25px #ffbb3c;
+  box-shadow: 0 0 25px #f8e856;
 }
 .section1-register:hover {
   background-color: black;
-  color: #ffbb3c;
+  color: #f8e856;
   cursor: pointer;
   transform: translateY(-7.5px);
   -webkit-transform: translateY(-7.5px);
@@ -134,11 +145,12 @@ body {
   -ms-transform: translateY(-2.5px);
   -o-transform: translateY(-2.5px);
 }
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .section1-register {
-    font-size: 1.3rem;
+    width: 125px;
+    font-size: 1.2rem;
     right: 10vw;
-    top: 100px;
+    top: 50px;
   }
 }
 
@@ -180,6 +192,7 @@ body {
 @media screen and (max-width: 450px) {
   .social-icons {
     display: flex;
+    /* width: 25px; */
   }
   .page {
     padding-left: 0;

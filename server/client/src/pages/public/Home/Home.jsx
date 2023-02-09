@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
 
-import CountdownTimer from './CountdownTimer';
+import CountdownTimer from "./CountdownTimer";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { Button } from "@mui/material";
@@ -134,10 +134,7 @@ export default function Home() {
 
   // console.log("usedetail " ,user)
 
-  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
-  const NOW_IN_MS = new Date().getTime();
-
-  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
+  const XPECTO_TIME = new Date("March 3, 2023").getTime();
   return (
     <>
       <LayoutPage>
@@ -199,8 +196,8 @@ export default function Home() {
               src={`${process.env.PUBLIC_URL}/home/mainlogo.svg`}
               alt="XpectoLogo"
             />
-            
-            <CountdownTimer targetDate={dateTimeAfterThreeDays} />
+
+            <CountdownTimer targetDate={XPECTO_TIME} />
             {/* temporary solution start */}
             <div className={styles["social-icons"]}>
               <a
@@ -228,7 +225,7 @@ export default function Home() {
             {/* temporary solution end */}
           </motion.div>
 
-          <motion.img
+          {/* <motion.img
             className={styles["section1-rightrectangle"]}
             src={`${process.env.PUBLIC_URL}/home/rightrectangle.svg`}
             alt="rightrectangle"
@@ -239,7 +236,7 @@ export default function Home() {
               bounce: 0.4,
               duration: 1.5,
             }}
-          />
+          /> */}
           <HashLink
             smooth
             to="/#about"
@@ -286,7 +283,7 @@ export default function Home() {
         >
           <About />
         </motion.div>
-        <motion.div
+        {/* <motion.div
           initial={{ y: 0 }}
           whileInView={{ y: 0 }}
           transition={{
@@ -298,7 +295,7 @@ export default function Home() {
           id="about"
         >
           <Ambassador />
-        </motion.div>
+        </motion.div> */}
         <div className={styles["section2"]} id="contact">
           <Contact />
         </div>
