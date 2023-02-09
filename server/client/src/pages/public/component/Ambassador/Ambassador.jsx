@@ -51,6 +51,9 @@ const navigate = useNavigate();
           highlighting the advantages of taking part in the fest. Win awesome goodies, free 
           passes to the fest and much more!
         </motion.p>
+      <Grid container>
+      <Grid  item xs={12}sm={6} md={6} ><Link to='/campusambassadors' className={styles["just"]} >Read More</Link></Grid>
+      </Grid>
       </div>
 
         <img src={`${process.env.PUBLIC_URL}/home/5.png`}

@@ -16,6 +16,7 @@ import Event from "./pages/public/Events/Event";
 import OurTeamPage from "./pages/public/OurTeam/OurTeamPage";
 import OldSponsor from "./pages/public/Sponsors/Sponsor";
 import Profile from "./pages/public/component/profile/Profile";
+import AmbassadorPage from "./pages/public/Ambassador/AmbassadorPage";
 
 import EventOpen from "./pages/public/Events/EventOpen";
 import ScrollToTop from "./ScrollToTop";
@@ -43,6 +44,7 @@ function App() {
               path="/profile/created-teams/:id"
               element={<CreatedTeamPage />}
             />
+            <Route path='/campusambassadors' element={<AmbassadorPage/>}/>
             <Route path="/ourteam" element={<OurTeamPage />} />
             <Route path="*" element={<Navigate to="/" />} />
             {/* <Route path="/admin/dashboard" element={<Dashboard />} />
