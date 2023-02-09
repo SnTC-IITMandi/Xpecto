@@ -8,6 +8,7 @@ import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
 import { ReactComponent as BackToTop } from "../../../svg/backtop-btn.svg";
 import { HashLink } from "react-router-hash-link";
 import { ThreeCircles } from "react-loader-spinner";
+import { Accordion, AccordionDetails } from "@mui/material";
 
 const FaqPage = () => {
   const [faqs, setFaqs] = useState(null);
@@ -100,22 +101,21 @@ const Faq = ({ faq }) => {
   const [isAnsVisible, setIsAnsVisible] = useState(false);
 
   return (
-    <section
+    <Accordion
+      expanded={isAnsVisible}
+      square={true}
       className={`${styles["faq-container"]} ${
         isAnsVisible && styles["faq-open"]
       }`}
+      disableGutters
       onClick={() => {
         setIsAnsVisible((prev) => !prev);
       }}
     >
       <h1 className={styles["faq-question"]}>{faq.question}</h1>
-      <p
-        className={`${styles["faq-answer"]} ${
-          isAnsVisible && styles["faq-answer-visible"]
-        }`}
-      >
-        {faq.answer}
-      </p>
-    </section>
+      <AccordionDetails>
+        <p className={styles["faq-answer"]}>{faq.answer}</p>
+      </AccordionDetails>
+    </Accordion>
   );
 };
