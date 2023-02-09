@@ -16,6 +16,10 @@ box-shadow: 0 0 50px -20px #f8e856;
     /* width: 500px; */
     margin: 0;
 }
+.card-outer-container:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 100px -20px #f8e856;
+}
 .card-inner-container {
     position: relative;
     margin: 0;
@@ -34,6 +38,7 @@ box-shadow: 0 0 50px -20px #f8e856;
     padding: 1rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
+    height: 180px;
 }
 .main-container {
     position: relative;
@@ -45,7 +50,7 @@ box-shadow: 0 0 50px -20px #f8e856;
 .event-tagline {
     font-size: 1rem;
     font-weight: normal;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .more-button {
     position: absolute;
@@ -58,6 +63,9 @@ box-shadow: 0 0 50px -20px #f8e856;
     font-size: 12.5px;
     text-decoration: none;
 }
+.date{ 
+    padding: 2px 0px;
+}
 @media (max-width: 600px) {
     .event-name {
         font-size: 1.75rem;
@@ -69,6 +77,14 @@ box-shadow: 0 0 50px -20px #f8e856;
     .more-button {
         font-size: 10px;
     }
+    .date
+        {
+            font-size: 10px;
+            
+    }
+    .card-inner-container {
+        height: 180px;
+    }
 }
 
 .live {
@@ -76,7 +92,7 @@ box-shadow: 0 0 50px -20px #f8e856;
     box-shadow:0 0 15px 0 red;
     background-color: red;
     padding: 5px 10px;
-    margin: 5px;
+    margin: 5px 0px;
     font-weight: bold;
     /* font-family: "Android 101"; */
     border-radius: 25px;
