@@ -7,8 +7,6 @@ import style from "./signup.module.css";
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Sidebar from "../../../../components/Sidebar/Sidebar";
-import { ReactComponent as FixedLogo } from "../../../../svg/xpecto-logo.svg";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -50,10 +48,6 @@ export default function Signup() {
   });
   return (
     <>
-      <Sidebar />
-      <div className={`${style["fixed-logo"]} ${style["fixed-logo-visible"]}`}>
-        <FixedLogo />
-      </div>
       <div className={style.container}>
         <div className={style.signform}>
           <div className={style.formstyle}>

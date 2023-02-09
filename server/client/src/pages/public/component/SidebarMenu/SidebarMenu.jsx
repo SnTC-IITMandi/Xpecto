@@ -197,6 +197,14 @@ function SidebarMenu() {
               MEET OUR TEAM
             </Link>
           </button>
+          <button
+            style={{ "--animation-order": 7 }}
+            className={styles.sidebarBtn}
+          >
+            <Link smooth to="/faq" onClick={linkClicked}>
+              FAQS
+            </Link>
+          </button>
         </div>
       </div>
     </>

@@ -10,7 +10,6 @@ import axios from "axios";
 // import Razorpay from "../component/payment/Razorpay";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Sidebar from "../../../components/Sidebar/Sidebar";
 import { useDispatch } from "react-redux";
 import * as action from "../../../actions/index";
 import About from "../component/About/About";
@@ -161,7 +160,7 @@ export default function Home() {
         >
           <BackToTop />
         </HashLink>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <div
           ref={mainLogoRef}
           data-color="#f8e856"
@@ -283,7 +282,7 @@ export default function Home() {
         >
           <About />
         </motion.div>
-        {/* <motion.div
+        <motion.div
           initial={{ y: 0 }}
           whileInView={{ y: 0 }}
           transition={{
@@ -295,7 +294,7 @@ export default function Home() {
           id="about"
         >
           <Ambassador />
-        </motion.div> */}
+        </motion.div>
         <div className={styles["section2"]} id="contact">
           <Contact />
         </div>
