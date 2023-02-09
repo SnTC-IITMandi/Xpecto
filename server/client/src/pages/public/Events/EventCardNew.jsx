@@ -9,8 +9,14 @@ const EventCardNew = (props) => {
                     <h2 className={styles["event-name"]}>
                         {props.data.name.toUpperCase()}
                     </h2>
-
-                    {props.data.info !== "" && (
+                    
+                    {props.data.start_time.day ? (
+                    <h5  className={styles["date"]}>{props.data.start_time.day.split('-').reverse().join('-')}</h5>
+                   
+                ) : (
+                    ""
+                )}
+                 {props.data.info !== "" && (
                         <h3 className={styles["event-tagline"]}>
                             {props.data.info}
                         </h3>
@@ -19,7 +25,7 @@ const EventCardNew = (props) => {
                 {props.data.isLive ? (
                     <span className={styles["live"]}>LIVE</span>
                 ) : (
-                    ""
+                    <br/>
                 )}
                 <Link
                     to={`/events/${props.data._id}`}
