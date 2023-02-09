@@ -36,14 +36,14 @@ const FaqPage = () => {
       const url = `${process.env.REACT_APP_BACKENDURL}/api/faqs/`;
       const data = await axios.get(url);
 
-      // setFaqs((prev) => data.data.data);
-      setFaqs(tempFaqs);
+      setFaqs((prev) => data.data.data);
+      // setFaqs(tempFaqs);
       // console.log();
       setIsLoading((prev) => false);
       // const teamsObj = {};
     } catch (err) {
-      setFaqs(tempFaqs);
-      // setIsLoading((prev) => true);
+      // setFaqs(tempFaqs);
+      setIsLoading((prev) => true);
       console.log(err);
     }
   };
