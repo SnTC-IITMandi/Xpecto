@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useState, useRef } from "react";
 import styles from "./Profile.module.css";
 import styles2 from "./CreatedTeamPage.module.css";
-import Sidebar from "../../../../components/Sidebar/Sidebar";
-import { ReactComponent as FixedLogo } from "../../../../svg/xpecto-logo.svg";
 import { Modal, Box } from "@mui/material";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -89,12 +87,6 @@ const CreatedTeamPage = () => {
 
   return (
     <>
-      <Sidebar />
-      <div
-        className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
-      >
-        <FixedLogo />
-      </div>
 
       <div
         data-color="#5dd9ff"

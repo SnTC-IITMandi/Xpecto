@@ -3,8 +3,6 @@ import styles from "./OurTeamPage.module.css";
 import Layout from "./../component/Layout/Layout";
 // import MemberCard from "./MemberCard";
 import axios from "axios";
-import Sidebar from "../../../components/Sidebar/Sidebar";
-import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
 import { ReactComponent as BackToTop } from "../../../svg/backtop-btn.svg";
 import { HashLink } from "react-router-hash-link";
 import { ThreeCircles } from "react-loader-spinner";
@@ -90,7 +88,6 @@ const OurTeamPage = () => {
 
   return (
     <>
-      <Sidebar />
       <HashLink
         smooth
         to="#"
@@ -106,11 +103,6 @@ const OurTeamPage = () => {
       >
         <div className={styles["header"]}>
           <h1 className={styles["main-heading"]}>MEET OUR TEAM</h1>
-          <div
-            className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
-          >
-            <FixedLogo />
-          </div>
         </div>
 
         {isLoading ? (

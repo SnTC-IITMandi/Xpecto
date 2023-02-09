@@ -3,10 +3,6 @@ import styles from "./FaqPage.module.css";
 import Layout from "../component/Layout/Layout";
 // import MemberCard from "./MemberCard";
 import axios from "axios";
-import Sidebar from "../../../components/Sidebar/Sidebar";
-import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
-import { ReactComponent as BackToTop } from "../../../svg/backtop-btn.svg";
-import { HashLink } from "react-router-hash-link";
 import { ThreeCircles } from "react-loader-spinner";
 import { Accordion, AccordionDetails } from "@mui/material";
 
@@ -43,12 +39,6 @@ const FaqPage = () => {
 
   return (
     <>
-      <Sidebar />
-      <div
-        className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
-      >
-        <FixedLogo />
-      </div>
       <Layout
         dataColor="#00b4d8"
         // dataColor="#00ddcc"
