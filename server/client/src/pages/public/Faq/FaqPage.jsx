@@ -12,24 +12,13 @@ import { Accordion, AccordionDetails } from "@mui/material";
 
 const FaqPage = () => {
   const [faqs, setFaqs] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // fire window scroll event to update scrollbar
     window.dispatchEvent(new Event("scroll"));
   }, [faqs]);
 
-  const tempFaqs = [
-    {
-      question: "What is Xpecto?",
-      answer: "Xpecto is techfest of IIT Mandi",
-    },
-    {
-      question: "Some random question ahhhhh?",
-      answer:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est laboriosam, quia dolore explicabo incidunt provident ea omnis quae sint distinctio earum iusto ipsum dolor adipisci laborum facere officia commodi! Perferendis exercitationem ipsam nobis rem reiciendis sint voluptate maiores incidunt minus. Dolores atque quidem iure cum labore, quis quaerat laudantium est.",
-    },
-  ];
 
   const getFaqs = async () => {
     try {
@@ -85,7 +74,7 @@ const FaqPage = () => {
           </div>
         ) : (
           <main className={styles["container"]}>
-            {tempFaqs.map((faq, index) => {
+            {faqs.map((faq, index) => {
               return <Faq key={index} faq={faq} />;
             })}
           </main>
