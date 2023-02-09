@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/public/Home/Home";
 // import Dashboard from "./pages/admin/Dashboard/Dashboard";
 // import Eventadmin from "./pages/admin/Event/Event";
@@ -21,10 +21,14 @@ import EventOpen from "./pages/public/Events/EventOpen";
 import ScrollToTop from "./ScrollToTop";
 import CreatedTeamPage from "./pages/public/component/profile/CreatedTeamPage";
 import FaqPage from "./pages/public/Faq/FaqPage";
+import Sidebar from "./components/Sidebar/Sidebar";
+import FixedLogo from "./pages/public/component/FixedLogo/FixedLogo";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Sidebar />
+        <FixedLogo />
         <ScrollToTop>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -40,7 +44,7 @@ function App() {
               element={<CreatedTeamPage />}
             />
             <Route path="/ourteam" element={<OurTeamPage />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<Navigate to="/" />} />
             {/* <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/event" element={<Eventadmin />} />
           <Route path="/admin/faq" element={<Faq />} />

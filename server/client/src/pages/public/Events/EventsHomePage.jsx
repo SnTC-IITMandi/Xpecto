@@ -1,9 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import Sidebar from "../../../components/Sidebar/Sidebar";
 import styles from "./EventsHomePage.module.css";
 import axios from "axios";
 import EventCardNew from "./EventCardNew";
-import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
 import { ThreeCircles } from "react-loader-spinner";
 import Layout from "../component/Layout/Layout";
 const EventsHomePage = () => {
@@ -36,15 +34,9 @@ const EventsHomePage = () => {
 
     return (
         <>
-            <Sidebar />
             <Layout dataColor="#F8C456">
                 <div className={styles["header"]}>
                     <h1 className={styles["events-page-heading"]}>EVENTS</h1>
-                    <div
-                        className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
-                    >
-                        <FixedLogo />
-                    </div>
                 </div>
                 {!isLoading ? (
                     <main className={styles["main"]}>

@@ -2,9 +2,7 @@ import axios from "axios";
 import React, { useState, useReducer, useMemo } from "react";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Sidebar from "../../../components/Sidebar/Sidebar";
 import LayoutPage from "../component/Layout/Layout";
-import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
 import styles from "./eventopen.module.css";
 import { Modal, Box } from "@mui/material";
 import { GoogleLogin } from "@react-oauth/google";
@@ -256,12 +254,6 @@ export default function EventOpen(props) {
 
   return (
     <>
-      <Sidebar />
-      <div
-        className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
-      >
-        <FixedLogo />
-      </div>
       <LayoutPage dataColor="#5dffde">
         {isEventDataLoading ||
         loadingUser ||
