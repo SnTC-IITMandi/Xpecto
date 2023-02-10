@@ -5,7 +5,7 @@ import Layout from "../component/Layout/Layout";
 const AmbassadorPage = () => {
   return (
     <>
-      <Layout data-color="#C078F7">
+      <Layout dataColor="#C078F7">
         <div className={styles["header"]}>
           <a
             href="https://forms.gle/anKQyngFAwdh5m1X6"
