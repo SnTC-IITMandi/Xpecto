@@ -7,6 +7,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { ThreeCircles } from "react-loader-spinner";
 import { WindowSharp } from "@mui/icons-material";
+import Layout from "../Layout/Layout";
 
 const CreatedTeamPage = () => {
   const navigate = useNavigate();
@@ -35,13 +36,6 @@ const CreatedTeamPage = () => {
 
   const profileRef = useRef(null);
 
-  useEffect(() => {
-    const current = profileRef.current;
-    document.body.style.setProperty(
-      "--current-page-color",
-      current.getAttribute("data-color")
-    );
-  }, []);
   const [userdetails, setuserdetails] = useState({ data: {} });
   const getprofiledata = async () => {
     try {
@@ -88,17 +82,7 @@ const CreatedTeamPage = () => {
   return (
     <>
 
-      <div
-        data-color="#5dd9ff"
-        ref={profileRef}
-        className={styles["events-page-container"]}
-        style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/home/background.jpg)`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <Layout dataColor="#5dd9ff">
         {!teamData || loadingUser || !isAuthenticated ? (
           <div className={styles["loading"]}>
             <ThreeCircles
@@ -185,7 +169,7 @@ const CreatedTeamPage = () => {
             </div>
           </>
         )}
-      </div>
+      </Layout>
     </>
   );
 };

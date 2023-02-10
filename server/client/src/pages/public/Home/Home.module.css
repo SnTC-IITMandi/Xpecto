@@ -148,8 +148,7 @@ body {
   display: none;
   position: fixed;
   top: 7.5px;
-  height: 170px;
-  aspect-ratio: 1 / 1;
+  width: 170px;
   z-index: 1000;
   right: 25px;
   top: 10px;
@@ -158,7 +157,7 @@ body {
 }
 @media (max-width: 600px) {
   .fixed-logo {
-    height: 150px;
+    width: 150px;
   }
 }
 .fixed-logo-visible {
@@ -175,6 +174,12 @@ body {
   aspect-ratio: 1 / 1;
   z-index: 10;
   cursor: pointer;
+}
+.back-to-top:hover{
+  transform: scale(1.05);
+}
+.back-to-top:active{
+  transform: scale(0.95);
 }
 .back-to-top-visible {
   display: unset;
