@@ -103,11 +103,11 @@ body {
 .section1-register {
   z-index: 1000000;
   position: absolute;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   right: 3%;
   /* top: max(10vh, 150px); */
-  top: 4%;
-  width: 200px;
+  top: 10%;
+  width: 150px;
   /* width: max(15vw, 200px); */
   color: black;
   background-color: #f8e856;
@@ -151,7 +151,7 @@ body {
     font-size: 1.3rem;
     /* right: 10vw;
     top: 100px; */
-    top:2%;
+    top:5%;
   }
 }
 

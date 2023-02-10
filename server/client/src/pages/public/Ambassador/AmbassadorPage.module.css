@@ -15,7 +15,9 @@
     z-index: 50;
     margin-top: 50px;
     font-family: 'Android 101';
-    text-shadow: 0 0 7.5px #f8c430;
+    text-shadow: 0 0 7.5px var(--event-main-color);
+    margin-bottom: 0;
+    padding-bottom: 0;
 
 }
 
@@ -30,9 +32,9 @@
     margin-left: 3rem;
     letter-spacing: 2.5px;
     z-index: 50;
-    margin-top: 50px;
+    /* margin-top: ; */
     font-family: 'Android 101';
-    text-shadow: 0 0 7.5px #f8c430;
+    text-shadow: 0 0 7.5px var(--event-main-color);
 
 }
 
@@ -41,6 +43,7 @@
         font-size: 2.5rem;
         padding: 2rem;
         margin-left: 1.5rem;
+        padding-bottom: 1rem;
     }
     .events-page-subheading{
         margin-left: 1rem;
@@ -75,7 +78,7 @@
         font-size: 1.75rem;
     }
     .aboutcontent{
-        margin-left: 1rem !important;
+        margin-left: 0rem !important;
         
     }
 }
@@ -119,3 +122,36 @@ main {
 .aboutcontent:last-of-type {
     margin-bottom: 7rem;
 }
+
+
+
+.form-link {
+    margin-top: 5rem;
+    margin-left: 2.5rem;
+    width: fit-content;
+    text-decoration: none;
+    font-family: "Android 101";
+    color: black;
+    border: 2px solid var(--event-main-color);
+    background-color: var(--event-main-color);
+    padding: 10px 20px;
+    font-size: 1.8rem;
+    border-radius: 12.5px;
+    -webkit-border-radius: 12.5px;
+    -moz-border-radius: 12.5px;
+    -ms-border-radius: 12.5px;
+    -o-border-radius: 12.5px;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+  
+    box-shadow: 0 0 25px 0 var(--event-main-color);
+  }
+  
+  .form-link:hover {
+    background-color: black;
+    color: var(--event-main-color);
+  }
+  

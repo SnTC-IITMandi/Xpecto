@@ -26,12 +26,8 @@ import LayoutPage from "../component/Layout/Layout";
 import Contact from "../component/Contact/Contact";
 import { motion } from "framer-motion";
 export default function Home() {
-  // const user = useSelector((state) => state.userinfo);
-  // const dispatch = useDispatch();
-  // const [newuser, setnewuser] = useState(user);
   const navigate = useNavigate();
-  const [isuser, setisuser] = useState(false);
-  const [bool, setbool] = useState(false);
+
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -59,23 +55,18 @@ export default function Home() {
   };
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loadingUser, setLoadingUser] = useState(true);
-  const [userdetails, setuserdetails] = useState({ data: {} });
-  const [imageurl, setimageurl] = useState();
+
   const getprofiledata = async () => {
     try {
       const url = `${process.env.REACT_APP_BACKENDURL}/api/user`;
       const data = await axios.get(url);
       setLoadingUser(false);
       const usrDATA = data.data.user;
-      setuserdetails((userdetails) => ({
-        ...userdetails,
-        ...usrDATA,
-      }));
-      setimageurl(usrDATA.image);
       if (usrDATA.email) {
         setIsAuthenticated((prev) => true);
       }
     } catch (err) {
+      setLoadingUser(false);
       setIsAuthenticated((prev) => false);
       console.log(err);
     }
@@ -83,12 +74,6 @@ export default function Home() {
   useEffect(() => {
     getprofiledata();
   }, []);
-  const googleAuth = async () => {
-    window.open(
-      `${process.env.REACT_APP_BACKENDURL}/auth/google/callback`,
-      "_self"
-    );
-  };
 
   const [fixedLogoVisible, setFixedLogoVisible] = useState(false);
   useEffect(() => {

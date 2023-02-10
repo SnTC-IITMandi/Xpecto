@@ -25,7 +25,7 @@ const Payment = () => {
                     <span>SNTC IIT MANDI</span>
                   </div>
                   <div className={styles["account-name"]}>
-                    <span>BANK Name</span>
+                    <span>Bank Name</span>
                     <span>State Bank Of India</span>
                   </div>
                   <div className={styles["account-number"]}>

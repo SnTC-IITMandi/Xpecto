@@ -8,7 +8,7 @@
   padding: 0;
   color: var(--payment-main-color);
   text-align: left;
-  font-size: 5rem;
+  font-size: 4rem;
   padding: 2rem;
   margin-left: 3rem;
   letter-spacing: 2.5px;
@@ -20,7 +20,7 @@
 
 @media (max-width: 600px) {
   .events-page-heading {
-    font-size: 3rem;
+    font-size: 2.75rem;
     padding: 1rem;
     margin-left: 1rem;
   }
@@ -60,6 +60,7 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  padding-bottom: 5rem;
 }
 
 .content-container {
@@ -95,10 +96,10 @@
   margin-bottom: 15px;
 }
 .info > div > span:nth-child(1) {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
 }
 .info > div > span:nth-child(2) {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .form-link {
@@ -108,7 +109,7 @@
   border: 2px solid var(--payment-main-color);
   background-color: var(--payment-main-color);
   padding: 10px 20px;
-  font-size: 2rem;
+  font-size: 1.8rem;
   border-radius: 12.5px;
   -webkit-border-radius: 12.5px;
   -moz-border-radius: 12.5px;
@@ -163,4 +164,15 @@
   margin: auto;
   width: 90%;
   padding: 1rem 0;
+}
+
+
+h1{font-size: 1.75rem;}
+h2{font-size: 1.5rem;}
+
+@media(max-width:600px)
+{
+
+  h1{font-size: 1.5rem;}
+  h2{font-size: 1.3rem}
 }

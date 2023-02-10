@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/public/Home/Home";
 // import Dashboard from "./pages/admin/Dashboard/Dashboard";
@@ -27,6 +28,9 @@ import FixedLogo from "./pages/public/component/FixedLogo/FixedLogo";
 import Payment from "./pages/public/Payment/Payment";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
