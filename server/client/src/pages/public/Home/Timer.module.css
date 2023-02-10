@@ -1,59 +1,89 @@
-.expired-notice {
-    text-align: center;
-    padding: 2rem;
-    border: 1px solid #ebebeb;
-    border-radius: 0.25rem;
-    margin: 0.5rem;
+:root {
+  --main-timer-color: #f8e856;
+}
+
+.show-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show-counter-inner {
+  display: flex;
+  margin: 50px auto;
+  gap: 25px;
+}
+
+.countdown {
+  width: 75px;
+  height: 75px;
+  /*border: 2px solid red;
+  */
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-timer-color);
+  box-shadow: 0 0 20px 0 var(--main-timer-color);
+  animation: blink 2s forwards;
+  -webkit-animation: blink 2s forwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 20px 0 var(--main-timer-color);
   }
-  
-  .expired-notice > span {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: red;
+  50% {
+    box-shadow: 0 0 40px 0 var(--main-timer-color);
   }
-  
-  .expired-notice > p {
-    font-size: 1.5rem;
+  100% {
+    box-shadow: 0 0 20px 0 var(--main-timer-color);
   }
-  
-  .show-counter {
-    padding: 0.5rem;
+}
+
+.countdown > * {
+  color: black;
+  font-family: "Android 101";
+  /* border: 2px solid white; */
+}
+
+.countdown span:nth-child(1) {
+  font-size: 20px;
+  font-weight: bold;
+}
+@media (max-width: 775px) {
+  .countdown {
+    width: 60px;
+    height: 60px;
   }
-  
-  .show-counter .countdown-link {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-    padding: 0.5rem;
-    border: 1px solid #ebebeb;
-    border-radius: 0.25rem;
-    text-decoration: none;
-    color: #fc1111;
+  .countdown span:nth-child(1) {
+    font-size: 16px;
   }
-  
-  .show-counter .countdown {
-    line-height: 1.25rem;
-    padding: 0 0.75rem 0 0.75rem;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  .countdown span:nth-child(2) {
+    font-size: 14px;
   }
-  
-  .show-counter .countdown.danger {
-    color: #ff0000;
+  .show-counter-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
   }
-  
-  .show-counter .countdown > p {
-    margin: 0;
+}
+@media(max-width: 500px)
+{
+  .countdown {
+    width: 52.5px;
+    height: 52.5px;
   }
-  
-  .show-counter .countdown > span {
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    line-height: 1rem;
+  .countdown span:nth-child(1) {
+    font-size: 15px;
   }
-  
+  .countdown span:nth-child(2) {
+    font-size: 13px;
+  }
+}

@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/public/Home/Home";
 // import Dashboard from "./pages/admin/Dashboard/Dashboard";
@@ -24,7 +25,12 @@ import CreatedTeamPage from "./pages/public/component/profile/CreatedTeamPage";
 import FaqPage from "./pages/public/Faq/FaqPage";
 import Sidebar from "./components/Sidebar/Sidebar";
 import FixedLogo from "./pages/public/component/FixedLogo/FixedLogo";
+import Payment from "./pages/public/Payment/Payment";
+
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>
@@ -44,8 +50,9 @@ function App() {
               path="/profile/created-teams/:id"
               element={<CreatedTeamPage />}
             />
-            <Route path='/campusambassadors' element={<AmbassadorPage/>}/>
+            <Route path="/campusambassadors" element={<AmbassadorPage />} />
             <Route path="/ourteam" element={<OurTeamPage />} />
+            <Route path="/payment-info" element={<Payment />} />
             <Route path="*" element={<Navigate to="/" />} />
             {/* <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/event" element={<Eventadmin />} />

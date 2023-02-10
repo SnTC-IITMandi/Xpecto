@@ -1,34 +1,29 @@
-import React from 'react';
-import DateTimeDisplay from './DateTimeDisplay';
+import React from "react";
+import DateTimeDisplay from "./DateTimeDisplay";
 import styles from "./Timer.module.css";
-import { useCountdown } from './hooks/useCountdown';
+import { useCountdown } from "./hooks/useCountdown";
 
 const ExpiredNotice = () => {
   return (
     <div className={styles["expired-notice"]}>
-      <span>Expired!!!</span>
-      <p>Please select a future date and time.</p>
+      <p>The Game is on !!!</p>
+      {/* <p>Please select a future date and time.</p> */}
     </div>
   );
 };
 
 const ShowCounter = ({ days, hours, minutes, seconds }) => {
   return (
-    <div  className={styles["show-counter"]}>
-      <a
-        
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles["countdown-link"]}
-      >
-        <DateTimeDisplay value={days} type={'Days'} isDanger={days <= 3} />
-        <p>:</p>
-        <DateTimeDisplay value={hours} type={'Hours'} isDanger={false} />
-        <p>:</p>
-        <DateTimeDisplay value={minutes} type={'Mins'} isDanger={false} />
-        <p>:</p>
-        <DateTimeDisplay value={seconds} type={'Seconds'} isDanger={false} />
-      </a>
+    <div className={styles["show-counter"]}>
+      <div className={styles["show-counter-inner"]}>
+        <DateTimeDisplay value={days} type={"Days"} isDanger={days <= 3} />
+
+        <DateTimeDisplay value={hours} type={"Hrs"} isDanger={false} />
+
+        <DateTimeDisplay value={minutes} type={"Min"} isDanger={false} />
+
+        <DateTimeDisplay value={seconds} type={"Sec"} isDanger={false} />
+      </div>
     </div>
   );
 };
