@@ -293,7 +293,11 @@ export default function EventOpen(props) {
                         : ""
                     }`}
                   </h2>
-
+                  {eventdata.shortsummary!==""&& 
+                  <h3 className={styles["event-shortsummary"]}>
+                    {eventdata.shortsummary}
+                  </h3>
+                  }
                   {/* main */}
                   <div className={styles["main"]}>
                     <p className={styles["eventdesc"]}>

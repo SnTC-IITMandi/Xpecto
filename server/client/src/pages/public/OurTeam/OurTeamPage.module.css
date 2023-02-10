@@ -29,9 +29,10 @@
 
 @media (max-width: 600px) {
   .main-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 2rem;
-    margin-left: 1.5rem;
+    margin-left: 0;
+    text-align: center;
   }
 }
 

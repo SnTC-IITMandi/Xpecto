@@ -23,7 +23,8 @@
   .events-page-heading {
     font-size: 3rem;
     padding: 2rem;
-    margin-left: 1.5rem;
+    margin-left: 0px;
+    text-align: center;
   }
 }
 
