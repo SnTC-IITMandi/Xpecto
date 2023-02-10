@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ThreeCircles } from "react-loader-spinner";
 import { WindowSharp } from "@mui/icons-material";
+import Layout from "../Layout/Layout";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -25,13 +26,6 @@ const Profile = () => {
 
   const eventsRef = useRef(null);
 
-  useEffect(() => {
-    const current = eventsRef.current;
-    document.body.style.setProperty(
-      "--current-page-color",
-      current.getAttribute("data-color")
-    );
-  });
   const [userdetails, setuserdetails] = useState({ data: {} });
   const [imageurl, setimageurl] = useState();
   const getprofiledata = async () => {
@@ -109,17 +103,7 @@ const Profile = () => {
   return (
     <>
 
-      <div
-        data-color="#5dd9ff"
-        ref={eventsRef}
-        className={styles["events-page-container"]}
-        style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/home/background.jpg)`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundAttachment: "fixed",
-        }}
-      >
+      <Layout dataColor="#5dd9ff">
         {loadingUser ? (
           <div className={styles["loading"]}>
             <ThreeCircles
@@ -137,11 +121,15 @@ const Profile = () => {
           </div>
         ) : (
           <>
+          
+            <div className={styles["page-container"]}>
+            
+              <div className={styles["profile-main-container"]}>
+              <div className="logoutdiv">
             <h2 className={styles["logout-button"]} onClick={logoutUser}>
               LOGOUT
             </h2>
-            <div className={styles["page-container"]}>
-              <div className={styles["profile-main-container"]}>
+            </div>
                 <div className={styles["details-card"]}>
                   <div className={styles["image-container"]}>
                     <img
@@ -232,7 +220,7 @@ const Profile = () => {
             </div>
           </>
         )}
-      </div>
+      </Layout>
 
       <Modal
         sx={{ backdropFilter: "blur(20px)" }}

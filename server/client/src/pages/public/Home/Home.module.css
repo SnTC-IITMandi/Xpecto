@@ -104,9 +104,9 @@ body {
   z-index: 1000000;
   position: absolute;
   font-size: 1.75rem;
-  right: 7.5vw;
+  right: 3%;
   /* top: max(10vh, 150px); */
-  top: 75px;
+  top: 4%;
   width: 200px;
   /* width: max(15vw, 200px); */
   color: black;
@@ -125,7 +125,12 @@ body {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   font-weight: normal;
+<<<<<<< HEAD
   box-shadow: 0 0 25px #f8e856;
+=======
+  box-shadow: 0 0 25px #ffbb3c;
+  z-index: 111!important;
+>>>>>>> upstream
 }
 .section1-register:hover {
   background-color: black;
@@ -147,10 +152,17 @@ body {
 }
 @media (max-width: 800px) {
   .section1-register {
+<<<<<<< HEAD
     width: 125px;
     font-size: 1.2rem;
     right: 10vw;
     top: 50px;
+=======
+    font-size: 1.3rem;
+    /* right: 10vw;
+    top: 100px; */
+    top:2%;
+>>>>>>> upstream
   }
 }
 
@@ -185,6 +197,12 @@ body {
   aspect-ratio: 1 / 1;
   z-index: 10;
   cursor: pointer;
+}
+.back-to-top:hover{
+  transform: scale(1.05);
+}
+.back-to-top:active{
+  transform: scale(0.95);
 }
 .back-to-top-visible {
   display: unset;

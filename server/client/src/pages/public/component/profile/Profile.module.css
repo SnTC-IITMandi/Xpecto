@@ -7,28 +7,6 @@
   --profile-main-color: #5dd9ff;
 }
 
-.fixed-logo {
-  display: none;
-  position: fixed;
-  top: 2%;
-  height: 170px;
-  aspect-ratio: 1 / 1;
-  z-index: 1000;
-  right: 25px;
-  top: 10px;
-
-  font-family: "Android 101" !important;
-}
-@media (max-width: 600px) {
-  .fixed-logo {
-    height: 150px;
-  }
-}
-.fixed-logo-visible {
-  display: unset;
-}
-
-.logout-button,
 .join-team-button {
   position: absolute;
   top: 75px;
@@ -52,6 +30,37 @@
   box-shadow: 0 0 25px -5px var(--profile-main-color);
 }
 
+
+.logout-button{
+  width:50%;
+  color: black;
+  background-color: var(--profile-main-color);
+  border: 2px solid var(--profile-main-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-family: "Android 101";
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  font-weight: normal;
+  box-shadow: 0 0 25px -5px var(--profile-main-color);
+ /* align-items: center; */
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+
+}
+.logoutdiv{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .logout-button:hover,
 .join-team-button:hover {
   background-color: black;
@@ -100,10 +109,12 @@
 @media (max-width: 600px) {
   .profile-main-container {
     padding: 25px 5px;
+    margin-top: 40px;
   }
   .page-container {
     padding: 100px 5px;
   }
+
 }
 .teams-container > div {
   width: 325px;

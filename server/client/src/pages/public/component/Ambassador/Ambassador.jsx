@@ -53,13 +53,9 @@ export default function About() {
           Win awesome goodies, free passes to the fest and much more!
        
         </motion.p>
-        <Grid container>
-          <Grid item xs={12} sm={6} md={6}>
-            <Link to="/campusambassadors" className={styles["just"]}>
-              Read More
-            </Link>
-          </Grid>
-        </Grid>
+      <Grid container>
+      <Grid  item xs={12}sm={6} md={6}display="flex" justifyContent="center" alignItems="center" ><Link to='/campusambassadors' className={styles["just"]} >Read More</Link></Grid>
+      </Grid>
       </div>
 
       {/* <img

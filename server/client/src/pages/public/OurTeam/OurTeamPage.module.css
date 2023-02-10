@@ -29,28 +29,13 @@
 
 @media (max-width: 600px) {
   .main-heading {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 2rem;
-    margin-left: 1.5rem;
+    margin-left: 0;
+    text-align: center;
   }
 }
 
-.fixed-logo {
-  display: none;
-  position: fixed;
-  top: 10px;
-  height: 170px;
-  aspect-ratio: 1 / 1;
-  z-index: 1000;
-  right: 25px;
-  top: 10px;
-
-  font-family: "Android 101" !important;
-}
-
-.fixed-logo-visible {
-  display: unset;
-}
 .loading {
   /* font-size: 2.5rem;
     color: var(--main-team-color);
@@ -104,15 +89,18 @@
   z-index: 10;
   cursor: pointer;
 }
+.back-to-top:hover{
+  transform: scale(1.05);
+}
+.back-to-top:active{
+  transform: scale(0.95);
+}
 .back-to-top-visible {
   display: unset;
 }
 @media (max-width: 600px) {
   .team-heading {
     font-size: 1.75rem;
-  }
-  .fixed-logo {
-    height: 150px;
   }
   .main-heading {
     font-size: 3rem;

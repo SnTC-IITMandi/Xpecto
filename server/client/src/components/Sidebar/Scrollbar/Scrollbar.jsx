@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "../Sidebar.module.css";
 
 function Scrollbar() {
   const scrollContRef = useRef(null);
   const scrollBtnRef = useRef(null);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const scrollbar = scrollBtnRef.current;
@@ -39,6 +41,11 @@ function Scrollbar() {
       window.removeEventListener("resize", scrollFunc, { passive: true });
     };
   }, [scrollContRef, scrollBtnRef]);
+
+  useEffect(() => {
+    // update scrollbar on route change
+    window.dispatchEvent(new Event("scroll"));
+  }, [pathname]);
 
   return (
     <div
