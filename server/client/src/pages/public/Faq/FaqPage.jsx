@@ -58,7 +58,7 @@ const FaqPage = () => {
               visible={true}
               ariaLabel="three-circles-rotating"
               outerCircleColor=""
-              innerCircleColor="#00ddcc"
+              innerCircleColor="#00b4d8"
               middleCircleColor=""
             />
           </div>

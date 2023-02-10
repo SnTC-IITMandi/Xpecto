@@ -1,25 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
-import Sidebar from "../../../components/Sidebar/Sidebar";
+import React, {  useState } from "react";
 import styles from "./AmbassadorPage.module.css";
-import axios from "axios";
-import { ReactComponent as FixedLogo } from "../../../svg/xpecto-logo.svg";
-import { ThreeCircles } from "react-loader-spinner";
 import {motion} from"framer-motion";
 import Layout from "../component/Layout/Layout";
 const EventsHomePage = () => {
-    const [isLoading, setIsLoading] = useState(true);
     return (
         <>
-            <Sidebar />
             <Layout dataColor="#F8C456">
                 <div className={styles["header"]}>
                     <h1 className={styles["events-page-heading"]}>Campus Ambassador Program</h1>
-                    <div
-                        className={`${styles["fixed-logo"]} ${styles["fixed-logo-visible"]}`}
-                    >
-                        <FixedLogo />
-                    </div>
-
                     <motion.p 
                     initial={{y:50}}
                     whileInView={{y:0 }}

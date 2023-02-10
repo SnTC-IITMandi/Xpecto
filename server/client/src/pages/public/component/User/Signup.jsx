@@ -7,6 +7,7 @@ import style from "./signup.module.css";
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Layout from "../Layout/Layout";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -43,12 +44,9 @@ export default function Signup() {
     setnewdata({ ...newdata, [input.name]: input.value });
   };
 
-  useEffect(() => {
-    document.body.style.setProperty("--current-page-color", "#92ceff");
-  });
   return (
     <>
-      <div className={style.container}>
+      <Layout dataColor="#92ceff">
         <div className={style.signform}>
           <div className={style.formstyle}>
             <h1>
@@ -210,7 +208,7 @@ export default function Signup() {
             </Stack>
           </div>
         </div>
-      </div>
+      </Layout>
     </>
   );
 }
