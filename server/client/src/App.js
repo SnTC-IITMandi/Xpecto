@@ -24,6 +24,8 @@ import CreatedTeamPage from "./pages/public/component/profile/CreatedTeamPage";
 import FaqPage from "./pages/public/Faq/FaqPage";
 import Sidebar from "./components/Sidebar/Sidebar";
 import FixedLogo from "./pages/public/component/FixedLogo/FixedLogo";
+import Payment from "./pages/public/Payment/Payment";
+
 function App() {
   return (
     <div className="App">
@@ -44,8 +46,9 @@ function App() {
               path="/profile/created-teams/:id"
               element={<CreatedTeamPage />}
             />
-            <Route path='/campusambassadors' element={<AmbassadorPage/>}/>
+            <Route path="/campusambassadors" element={<AmbassadorPage />} />
             <Route path="/ourteam" element={<OurTeamPage />} />
+            <Route path="/payment-info" element={<Payment />} />
             <Route path="*" element={<Navigate to="/" />} />
             {/* <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/event" element={<Eventadmin />} />

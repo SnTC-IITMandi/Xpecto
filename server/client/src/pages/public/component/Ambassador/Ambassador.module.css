@@ -7,7 +7,7 @@
     text-shadow: var(--ambassador-main-color) 0 0 7.5px;
 
     text-align: start;
-    font-size: 5rem;
+    font-size: 3.5rem;
     font-weight: 500;
     /* margin-bottom: 10px; */
     /* text-shadow: 1px 1.1px 2.5px #fff; */
@@ -32,13 +32,13 @@
 .aboutcontent {
     line-height: 1.25;
     font-size: 1.25rem;
-    font-size: x-large;
     text-align: justify;
+    margin-bottom: 50px;
 }
 
 @media screen and (max-width: 600px) {
     .heading1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
 }
 
@@ -48,7 +48,7 @@
     background-color: var(--ambassador-main-color);
     color: #000;
     padding: 10px 15px;
-    margin-top: 50px;
+    margin-top: 100px;
     border-radius: 10px;
     border: 3px solid var(--ambassador-main-color);
     cursor: pointer;
@@ -61,7 +61,7 @@
     -moz-transition: all 0.25s;
     -ms-transition: all 0.25s;
     -o-transition: all 0.25s;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     text-decoration: none;
     font-family: "Android 101";
     /* letter-spacing: -1px; */
@@ -109,7 +109,7 @@
     }
 
     .aboutcontent {
-        font-size: large;
+        font-size: 1.25rem;
     }
 }
 

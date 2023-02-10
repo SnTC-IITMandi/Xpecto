@@ -8,7 +8,7 @@
     padding: 0;
     color: var(--event-main-color);
     text-align: left;
-    font-size: 5rem;
+    font-size: 3.5rem;
     padding: 2.5rem;
     margin-left: 3rem;
     letter-spacing: 2.5px;
@@ -36,11 +36,16 @@
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     .events-page-heading {
-        font-size: 3rem;
+        font-size: 2.5rem;
         padding: 2rem;
         margin-left: 1.5rem;
+    }
+    .events-page-subheading{
+        margin-left: 1rem;
+        padding: 1rem;
+        font-size: 2rem;
     }
 }
 
@@ -60,6 +65,18 @@
 @media (max-width: 600px) {
     .fixed-logo {
         height: 150px;
+    }
+    .events-page-heading {
+        font-size: 2rem;
+        padding: 1rem;
+        margin-left: 1rem;
+    }
+    .events-page-subheading{
+        font-size: 1.75rem;
+    }
+    .aboutcontent{
+        margin-left: 1rem !important;
+        
     }
 }
 
@@ -96,7 +113,7 @@ main {
 .aboutcontent {
     line-height: 1.25;
     font-size: 1.25rem;
-    font-size: x-large;
+    /* font-size: x-large; */
     text-align: justify;
     color: white;
     max-width: 70vw;
