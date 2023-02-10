@@ -10,15 +10,22 @@
 .card-outer-container {
     padding: 5px;
     background-color: var(--event-card-main-color);
-
-
-box-shadow: 0 0 50px -20px #f8e856;
-    /* width: 500px; */
-    margin: 0;
+    /*box-shadow: 0 0 50px -20px #f8e856;
+    *//*width: 500px;
+    */margin: 0;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
 }
 .card-outer-container:hover{
-    transform: scale(1.05);
-    box-shadow: 0 0 100px -20px #f8e856;
+    transform: scale(1.025);
+    box-shadow: 0 0 50px -25px var(--event-card-main-color);
+    -webkit-transform: scale(1.025);
+    -moz-transform: scale(1.025);
+    -ms-transform: scale(1.025);
+    -o-transform: scale(1.025);
 }
 .card-inner-container {
     position: relative;

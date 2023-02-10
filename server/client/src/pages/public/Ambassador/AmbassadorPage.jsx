@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import styles from "./AmbassadorPage.module.css";
 import { motion } from "framer-motion";
 import Layout from "../component/Layout/Layout";
-const EventsHomePage = () => {
+const AmbassadorPage = () => {
   return (
     <>
       <Layout dataColor="#F8C456">
         <div className={styles["header"]}>
-            
           <a
-            href="https://forms.gle/QYPqY41F9wYtE2xd7"
+            href="https://forms.gle/anKQyngFAwdh5m1X6"
             target="_blank"
             className={styles["form-link"]}
           >
             Register
           </a>
-          <h1 className={styles["events-page-heading"]}>
+          <h1 className={styles["ambassador-page-heading"]}>
             Campus Ambassador Program
           </h1>
           <motion.p
@@ -25,7 +24,7 @@ const EventsHomePage = () => {
               delay: 0.1,
               duration: 1,
             }}
-            className={styles["aboutcontent"]}
+            className={styles["ambassador-aboutcontent"]}
           >
             <br />
             Back and better than before, XPECTO’23 is here with its campus
@@ -37,7 +36,7 @@ const EventsHomePage = () => {
             yours, that’s our campus ambassador program.
           </motion.p>
 
-          <h1 className={styles["events-page-subheading"]}>
+          <h1 className={styles["ambassador-page-subheading"]}>
             Opportunity to go above and beyond
           </h1>
           <motion.p
@@ -47,7 +46,7 @@ const EventsHomePage = () => {
               delay: 0.1,
               duration: 1,
             }}
-            className={styles["aboutcontent"]}
+            className={styles["ambassador-aboutcontent"]}
           >
             Become the link that joins your college community with XPECTO’23 by
             fulfilling the duties of the campus ambassador. Flexible and fast,
@@ -64,7 +63,7 @@ const EventsHomePage = () => {
               delay: 0.1,
               duration: 1,
             }}
-            className={styles["aboutcontent"]}
+            className={styles["ambassador-aboutcontent"]}
           >
             Phenomenal networking opportunities, extravagant communication
             skills and, of course, the fame of representing the fest of one of
@@ -77,4 +76,4 @@ const EventsHomePage = () => {
   );
 };
 
-export default EventsHomePage;
+export default AmbassadorPage;
