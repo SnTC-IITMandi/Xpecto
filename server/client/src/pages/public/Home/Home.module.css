@@ -93,9 +93,9 @@ body {
 .section1-register {
   position: absolute;
   font-size: 1.75rem;
-  right: 7.5vw;
+  right: 3%;
   /* top: max(10vh, 150px); */
-  top: 150px;
+  top: 4%;
   width: 200px;
   /* width: max(15vw, 200px); */
   color: black;
@@ -115,6 +115,7 @@ body {
   -o-transition: all 0.3s;
   font-weight: normal;
   box-shadow: 0 0 25px #ffbb3c;
+  z-index: 111!important;
 }
 .section1-register:hover {
   background-color: black;
@@ -137,8 +138,9 @@ body {
 @media (max-width: 700px) {
   .section1-register {
     font-size: 1.3rem;
-    right: 10vw;
-    top: 100px;
+    /* right: 10vw;
+    top: 100px; */
+    top:2%;
   }
 }
 
