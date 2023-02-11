@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+const mongoose = require("mongoose");
 const Team = require("../models/eventTeamModel");
 const Game = require("../models/eventModel");
 const AppError = require("../utils/AppError");
@@ -117,6 +118,7 @@ exports.create = catchAsync(async (req, res, next) => {
 });
 
 // require inside body teamCode, playerId
+// expiry code feature is disabled
 exports.addPlayer = catchAsync(async (req, res, next) => {
   const teamCode = req.body.teamCode;
 
@@ -200,7 +202,7 @@ exports.addGame = catchAsync(async (req, res, next) => {
   }
 
   curentTeamSize = team.players.length;
-  console.log(req.body);
+  // console.log(req.body);
   // check if game can be added in a team
   currentGame = await Game.findById(req.body.gameId);
   if (currentGame.teamMaxSize < curentTeamSize) {
@@ -246,9 +248,9 @@ exports.getCode = catchAsync(async (req, res, next) => {
     return next(new AppError("Only creater can generate a code", 400));
   }
 
-  // increase expiry time by 10 min
-  expireTimeInminutes = 10;
-  team.expires = Date.now() + expireTimeInminutes * 60 + 1000;
+  // increase expiry time by 1 year
+  expireTimeInminutes = 365 * 24 * 60;
+  team.expires = Date.now() + expireTimeInminutes * 60 * 1000;
 
   const code = generateCode(req.user.id);
   team.code = code;
@@ -263,13 +265,14 @@ exports.getCode = catchAsync(async (req, res, next) => {
   });
 });
 
+// checking weather a team is already created for a particular event or not by a particular user
 exports.teamForCurrentEvent = catchAsync(async (req, res, next) => {
   try {
     const creatorId = req.user.id;
     const eventId = req.params.eventId;
 
     const game = await Team.findOne({ game: eventId, players: creatorId });
-    console.log(creatorId, eventId);
+    // console.log(creatorId, eventId);
     res.status(200).json({
       status: "success",
       game,
@@ -294,7 +297,28 @@ exports.deleteTeam = catchAsync(async (req, res, next) => {
         new AppError("You are not creater so you can't delete the team")
       );
     }
+
+    teamIdObj = new mongoose.Types.ObjectId(req.params.teamId);
     const deletedTeam = await Team.findByIdAndDelete(req.params.teamId);
+
+    // deleting teamId from headOfTeams of creater
+    const createrId = deletedTeam.creater;
+    const userDb = await User.findById(createrId);
+    newHeadOfTeams = userDb.headOfTeams.filter((id) => !id.equals(teamIdObj));
+    userDb.headOfTeams = newHeadOfTeams;
+    await userDb.save();
+
+    // deleting teamId from registeredTeams of all users
+    await Promise.all(
+      deletedTeam.players.map(async (id) => {
+        const userDb = await User.findById(id);
+        newRegisteredTeams = userDb.registeredTeams.filter(
+          (id) => !id.equals(teamIdObj)
+        );
+        userDb.registeredTeams = newRegisteredTeams;
+        await userDb.save();
+      })
+    );
 
     res.status(200).json({
       status: "success",
@@ -305,7 +329,7 @@ exports.deleteTeam = catchAsync(async (req, res, next) => {
   } catch (err) {
     res.status(404).json({
       status: "failed",
-      message: error,
+      message: err,
     });
   }
 });
