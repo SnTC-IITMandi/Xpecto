@@ -15,7 +15,6 @@ const FaqPage = () => {
     window.dispatchEvent(new Event("scroll"));
   }, [faqs]);
 
-
   const getFaqs = async () => {
     try {
       const url = `${process.env.REACT_APP_BACKENDURL}/api/faqs/`;
@@ -44,7 +43,7 @@ const FaqPage = () => {
         // dataColor="#00ddcc"
       >
         <div className={styles["header"]}>
-          <h1 className={styles["main-heading"]}>FAQ</h1>
+          <h1 className={styles["main-heading"]}>FAQ's</h1>
         </div>
 
         {isLoading ? (
@@ -62,12 +61,14 @@ const FaqPage = () => {
               middleCircleColor=""
             />
           </div>
-        ) : (
+        ) : faqs.length > 0 ? (
           <main className={styles["container"]}>
             {faqs.map((faq, index) => {
               return <Faq key={index} faq={faq} />;
             })}
           </main>
+        ) : (
+          <h1 className={styles["coming-soon"]}>Coming Soon</h1>
         )}
       </Layout>
     </>

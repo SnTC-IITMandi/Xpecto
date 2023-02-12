@@ -165,12 +165,12 @@ function SidebarMenu() {
           ) : (
             ""
           )}
-          <button
+          {/* <button
             style={{ "--animation-order": 6 }}
             className={styles.sidebarBtn}
           >
             <Link to="/payment-info">PAYMENT</Link>
-          </button>
+          </button> */}
           {/* <button
             style={{ "--animation-order": 5 }}
             className={styles.sidebarBtn}
@@ -190,7 +190,7 @@ function SidebarMenu() {
             <Link to="/faq">FAQ</Link>
           </button> */}
           <button
-            style={{ "--animation-order": 7 }}
+            style={{ "--animation-order": 6 }}
             className={styles.sidebarBtn}
           >
             <Link smooth to="/ourteam" onClick={linkClicked}>
@@ -198,7 +198,7 @@ function SidebarMenu() {
             </Link>
           </button>
           <button
-            style={{ "--animation-order": 8 }}
+            style={{ "--animation-order": 7 }}
             className={styles.sidebarBtn}
           >
             <Link smooth to="/faq" onClick={linkClicked}>

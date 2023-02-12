@@ -52,7 +52,7 @@ function App() {
             />
             <Route path="/campusambassadors" element={<AmbassadorPage />} />
             <Route path="/ourteam" element={<OurTeamPage />} />
-            <Route path="/payment-info" element={<Payment />} />
+            {/* <Route path="/payment-info" element={<Payment />} /> */}
             <Route path="*" element={<Navigate to="/" />} />
             {/* <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/event" element={<Eventadmin />} />
