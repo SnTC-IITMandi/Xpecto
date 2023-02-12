@@ -36,4 +36,7 @@ router.get(
 );
 router.delete("/deleteTeam/:teamId", eventTeamController.deleteTeam);
 
+//testing
+// router.post("/deleteTeam/:teamId", eventTeamController.deleteTeam);
+
 module.exports = router;
