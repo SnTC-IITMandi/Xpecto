@@ -43,7 +43,7 @@ const FaqPage = () => {
         // dataColor="#00ddcc"
       >
         <div className={styles["header"]}>
-          <h1 className={styles["main-heading"]}>FAQ's</h1>
+          <h1 className={styles["main-heading"]}>FAQ</h1>
         </div>
 
         {isLoading ? (
