@@ -75,22 +75,26 @@
   --sidebar-button-width: 80;
   --sidebar-button-translate: calc((1 + 100 / var(--sidebar-button-width)));
   /*font-weight: bolder;
-  */font-size: 1.4rem;
+  */
+  font-size: 1.5rem;
   border: none;
-  height: 3.3rem;
+  height: 3.5rem;
   margin: 7.5px auto;
   width: calc(var(--sidebar-button-width) * 1%);
   cursor: pointer;
-  transform: translateX(    calc(-1 * var(--sidebar-padding) - 50% * var(--sidebar-button-translate))  );
-  /*cornerslantcut*/background: linear-gradient(-45deg, transparent 15px, #ccf1e0 15px);
+  transform: translateX(
+    calc(-1 * var(--sidebar-padding) - 50% * var(--sidebar-button-translate))
+  );
+  /*cornerslantcut*/
+  background: linear-gradient(-45deg, transparent 15px, #ccf1e0 15px);
   font-family: "Android 101";
   font-weight: normal;
-  transition: all .5s !important;
-  -webkit-transition: all .5s !important;
-  -moz-transition: all .5s !important;
-  -ms-transition: all .5s !important;
-  -o-transition: all .5s !important;
-  -webkit-transition:;
+  transition: all 0.5s !important;
+  -webkit-transition: all 0.5s !important;
+  -moz-transition: all 0.5s !important;
+  -ms-transition: all 0.5s !important;
+  -o-transition: all 0.5s !important;
+  -webkit-transition: ;
 }
 
 .sidebarBtn:hover {

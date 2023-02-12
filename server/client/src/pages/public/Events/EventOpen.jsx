@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useReducer, useMemo } from "react";
+import React, { useState, useReducer, useMemo, useRef } from "react";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import LayoutPage from "../component/Layout/Layout";
@@ -9,6 +9,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { ThreeCircles } from "react-loader-spinner";
 
 export default function EventOpen(props) {
+  const submitRef = useRef(null);
   const params = useParams();
   const navigate = useNavigate();
   const [allEventTeams, setAllEventTeams] = useState(null);
@@ -204,8 +205,11 @@ export default function EventOpen(props) {
       });
     }
   };
+
   const formSubmitHandler = async (e) => {
     e.preventDefault();
+    submitRef.current.value = "Please Wait";
+    submitRef.current.disabled = true;
     const url = `${process.env.REACT_APP_BACKENDURL}/api/eventTeam`;
     // console.log(eventTeamNameState.isValid);
     if (eventTeamNameState.isValid === true) {
@@ -230,6 +234,8 @@ export default function EventOpen(props) {
         `;
       }
       console.log(code);
+      submitRef.current.value = "Submit";
+      submitRef.current.disabled = false;
     }
   };
 
@@ -293,11 +299,11 @@ export default function EventOpen(props) {
                         : ""
                     }`}
                   </h2>
-                  {eventdata.shortsummary!==""&& 
-                  <h3 className={styles["event-shortsummary"]}>
-                    {eventdata.shortsummary}
-                  </h3>
-                  }
+                  {eventdata.shortsummary !== "" && (
+                    <h3 className={styles["event-shortsummary"]}>
+                      {eventdata.shortsummary}
+                    </h3>
+                  )}
                   {/* main */}
                   <div className={styles["main"]}>
                     <p className={styles["eventdesc"]}>
@@ -436,6 +442,7 @@ export default function EventOpen(props) {
                       </div>
                       <div className={styles["submit-grp"]}>
                         <input
+                          ref={submitRef}
                           type="submit"
                           onClick={formSubmitHandler}
                           id="submit"
