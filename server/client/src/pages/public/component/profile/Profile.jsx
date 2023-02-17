@@ -102,7 +102,6 @@ const Profile = () => {
   };
   return (
     <>
-
       <Layout dataColor="#5dd9ff">
         {loadingUser ? (
           <div className={styles["loading"]}>
@@ -121,15 +120,13 @@ const Profile = () => {
           </div>
         ) : (
           <>
-          
             <div className={styles["page-container"]}>
-            
               <div className={styles["profile-main-container"]}>
-              <div className="logoutdiv">
-            <h2 className={styles["logout-button"]} onClick={logoutUser}>
-              LOGOUT
-            </h2>
-            </div>
+                <div className="logoutdiv">
+                  <h2 className={styles["logout-button"]} onClick={logoutUser}>
+                    LOGOUT
+                  </h2>
+                </div>
                 <div className={styles["details-card"]}>
                   <div className={styles["image-container"]}>
                     <img
