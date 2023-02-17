@@ -26,7 +26,7 @@ import FaqPage from "./pages/public/Faq/FaqPage";
 import Sidebar from "./components/Sidebar/Sidebar";
 import FixedLogo from "./pages/public/component/FixedLogo/FixedLogo";
 import Payment from "./pages/public/Payment/Payment";
-
+import DementiaPage from "./pages/public/Events/DementiaPage";
 function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -40,6 +40,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<EventsHomePage />} />
+            <Route
+              path="/events/63dbf7f8de4b0c5e13d1bef3"
+              element={<DementiaPage />}
+            />
             <Route path="/events/:id" element={<EventOpen />} />
             <Route path="/oldsponsors" element={<OldSponsor />} />
             <Route path="/oldevents" element={<Event />} />
@@ -52,7 +56,7 @@ function App() {
             />
             <Route path="/campusambassadors" element={<AmbassadorPage />} />
             <Route path="/ourteam" element={<OurTeamPage />} />
-            {/* <Route path="/payment-info" element={<Payment />} /> */}
+            <Route path="/payment-info" element={<Payment />} />
             <Route path="*" element={<Navigate to="/" />} />
             {/* <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/event" element={<Eventadmin />} />

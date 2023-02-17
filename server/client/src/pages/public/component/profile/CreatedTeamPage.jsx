@@ -78,10 +78,12 @@ const CreatedTeamPage = () => {
       console.log(error);
     }
   };
+  const goToProfile = () => {
+    navigate("/profile");
+  };
 
   return (
     <>
-
       <Layout dataColor="#5dd9ff">
         {!teamData || loadingUser || !isAuthenticated ? (
           <div className={styles["loading"]}>
@@ -94,15 +96,27 @@ const CreatedTeamPage = () => {
               visible={true}
               ariaLabel="three-circles-rotating"
               outerCircleColor=""
+              button
               innerCircleColor="#5dd9ff"
               middleCircleColor=""
             />
           </div>
         ) : (
           <>
-            {/* <h2 className={styles["logout-button"]} onClick={logoutUser}>
-              LOGOUT
-            </h2> */}
+            <div className={styles2["logoutdiv"]}>
+              <h2 className={styles["logout-button"]} onClick={goToProfile}>
+                Profile
+              </h2>
+            </div>
+            {/* <div className={styles2["team-delete-container"]} id="profile-btn">
+              <a
+                href="/profile"
+                // className={styles2["team-delete-button"]}
+                className={styles2["team-delete"]}
+              >
+                Profile
+              </a>
+            </div> */}
             <div className={styles["page-container"]}>
               <div className={styles2["team-main-container"]}>
                 <div className={styles2["team-name-container"]}>
@@ -116,12 +130,14 @@ const CreatedTeamPage = () => {
                   </div>
                 </div>
 
-                <div className={styles2["code-container"]}>
-                  <div className={styles2["code"]}>
-                    Code <br />
-                    {teamData.code}
+                {teamData.game._id == "63dbf7f8de4b0c5e13d1bef3" ? null : (
+                  <div className={styles2["code-container"]}>
+                    <div className={styles2["code"]}>
+                      Code <br />
+                      {teamData.code}
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className={styles2["team-members-container"]}>
                   <div className={styles2["members-heading"]}>Members</div>
 
