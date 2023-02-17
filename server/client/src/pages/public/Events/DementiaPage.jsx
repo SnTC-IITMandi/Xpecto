@@ -187,10 +187,14 @@ export default function DementiaPage(props) {
       });
     }
   };
+  const [btnText, setBtnText] = useState("Register for the Event");
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
-    submitRef.current.value = "Please Wait";
+    setBtnText("Please Wait");
+    // e.current.target
+    console.log(submitRef.current);
+    submitRef.current.text = "Please Wait";
     submitRef.current.disabled = true;
     const url = `${process.env.REACT_APP_BACKENDURL}/api/eventTeam`;
     // console.log(eventTeamNameState.isValid);
@@ -248,7 +252,7 @@ export default function DementiaPage(props) {
               onClick={formSubmitHandler}
               ref={submitRef}
             >
-              Register for the Event
+              {btnText}
             </button>
           )
         ) : null
