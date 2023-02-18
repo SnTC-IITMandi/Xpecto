@@ -167,7 +167,7 @@
 }
 
 .payment-deadline {
-  background-color: red;
+  background-color: rgb(190, 0, 0);
   color: white;
   margin: auto;
   width: 90%;
