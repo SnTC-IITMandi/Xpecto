@@ -130,6 +130,9 @@ const eventSchema = mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  status: {
+    type: String,
+  },
   // registeredUsers: [
   //     { type: mongoose.Schema.ObjectId, ref: "UserDetails", unique: true },
   // ],

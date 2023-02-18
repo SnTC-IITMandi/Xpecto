@@ -299,6 +299,12 @@ export default function EventOpen(props) {
                         : ""
                     }`}
                   </h2>
+                  <h2 className={styles["events-page-teamsize"]}>
+                    {eventdata.status}
+                  </h2>
+                  <div className={styles["events-page-teamsize"]}>
+                    {eventdata.info}
+                  </div>
                   {eventdata.shortsummary !== "" && (
                     <h3 className={styles["event-shortsummary"]}>
                       {eventdata.shortsummary}
