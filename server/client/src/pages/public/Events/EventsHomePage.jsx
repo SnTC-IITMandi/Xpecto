@@ -18,7 +18,7 @@ const EventsHomePage = () => {
         ...events,
         data: data.data.data,
       }));
-      // console.log(data.data.data)
+      console.log(data.data.data);
       setIsLoading((prev) => false);
     } catch (err) {
       setIsLoading((prev) => true);
