@@ -166,13 +166,32 @@
   padding: 1rem 0;
 }
 
+.payment-deadline {
+  background-color: red;
+  color: white;
+  margin: auto;
+  width: 90%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
-h1{font-size: 1.75rem;}
-h2{font-size: 1.5rem;}
+h1 {
+  font-size: 1.75rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
 
-@media(max-width:600px)
-{
-
-  h1{font-size: 1.5rem;}
-  h2{font-size: 1.3rem}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
 }

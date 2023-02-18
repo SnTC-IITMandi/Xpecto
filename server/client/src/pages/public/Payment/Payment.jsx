@@ -13,6 +13,11 @@ const Payment = () => {
               <div className={styles["message"]}>
                 <h1 className={styles["amount"]}>Rs. 1700 per person</h1>
                 <h1>For offline participation</h1>
+                <h1 className={styles["payment-deadline"]}>
+                  Deadline for fee payment
+                  <br />
+                  23 Feb, 2023
+                </h1>
                 {/* <h2>Payment to be made by CONTINGENT LEADER ONLY</h2> */}
                 <h2>Please fill the form after Payment</h2>
                 {/* <h2></h2> */}
