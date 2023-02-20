@@ -13,6 +13,10 @@ const Payment = () => {
               <div className={styles["message"]}>
                 <h1 className={styles["amount"]}>Rs. 1700 per person</h1>
                 <h1>For offline participation</h1>
+                <h2>
+                  INCLUDED <br />3 days Accomodation + Food + Event
+                  Participation + Pro Night
+                </h2>
                 <h1 className={styles["payment-deadline"]}>
                   Deadline for fee payment
                   <br />
@@ -23,6 +27,13 @@ const Payment = () => {
                 {/* <h2></h2> */}
               </div>
               <div className={styles["content-inner"]}>
+                <a
+                  href="https://forms.gle/LMstcRnCQwbfcsTw7"
+                  target="_blank"
+                  className={styles["form-link"]}
+                >
+                  FORM
+                </a>
                 <div className={styles["info"]}>
                   <div className={styles["account-name"]}>
                     <span>Account Name</span>
@@ -45,14 +56,6 @@ const Payment = () => {
                     <span>PUNB0731500</span>
                   </div>
                 </div>
-
-                <a
-                  href="https://forms.gle/LMstcRnCQwbfcsTw7"
-                  target="_blank"
-                  className={styles["form-link"]}
-                >
-                  FORM
-                </a>
               </div>
             </div>
           </div>
