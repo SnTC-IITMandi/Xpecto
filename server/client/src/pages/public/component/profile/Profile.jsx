@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import styles from "./Profile.module.css";
 import { Modal, Box } from "@mui/material";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ThreeCircles } from "react-loader-spinner";
 import { WindowSharp } from "@mui/icons-material";
 import Layout from "../Layout/Layout";
@@ -179,9 +179,9 @@ const Profile = () => {
                             <div>{team.teamName}</div>
                             <div>Event - {team.game.name}</div>
                             <div>{team.players.length} Members</div>
-                            <a href={`/profile/created-teams/${team._id}`}>
+                            <Link to={`/profile/created-teams/${team._id}`}>
                               <button>More</button>
-                            </a>
+                            </Link>
                           </div>
                         ))}
                       </div>

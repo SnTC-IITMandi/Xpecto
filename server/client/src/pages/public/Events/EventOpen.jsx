@@ -20,7 +20,8 @@ export default function EventOpen(props) {
 
     setOpenEventTeam(false);
   };
-
+  // some clubs have links to their websites
+  const clubsWithLinks = {"Frosthack": "Frosthack", "STAC":"Astrax"}
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -289,8 +290,26 @@ export default function EventOpen(props) {
               <div className={styles["container-flex"]}>
                 <div className={styles["event-main-description"]}>
                   <h2 className={styles["events-page-teamsize"]}>
-                    {MESSAGE}
-                    {eventRegister}
+                    {eventdata._id === "63dbf9a5de4b0c5e13d1befb" ? (
+                      <>
+                        {/* different registration Link for FROSTHACK */}
+                        {MESSAGE || (
+                          <a
+                            href={eventdata.shortsummary}
+                            target="_blank"
+                            className={styles["create-team-register"]}
+                          >
+                            {/* redirect to external Frosthack registration page */}
+                            Register for the Event
+                          </a>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        {MESSAGE}
+                        {eventRegister}
+                      </>
+                    )}
                     <br />
                     Team Size :{" "}
                     {`${eventdata.teamMinSize} ${
@@ -305,9 +324,10 @@ export default function EventOpen(props) {
                   <div className={styles["events-page-teamsize"]}>
                     {eventdata.info}
                   </div>
-                  {eventdata.shortsummary !== "" && (
-                    <h3 className={styles["event-shortsummary"]}>
-                      {eventdata.shortsummary}
+                  {eventdata.longsummary !== "" && (
+                    <h3 className={styles["event-longsummary"]}>
+                      {/* additional updates of the event */}
+                      {eventdata.longsummary}
                     </h3>
                   )}
                   {/* main */}
@@ -316,6 +336,19 @@ export default function EventOpen(props) {
                       {eventdata.description}
                     </p>
                     <br />
+                    {clubsWithLinks[eventdata.club] !== undefined && (
+                      <>
+                        For more information visit{" "}
+                        <a
+                          href={eventdata.shortsummary}
+                          target="_blank"
+                          className={styles["create-team-register"]}
+                          style={{ padding: "5px 20px" }}
+                        >
+                          {clubsWithLinks[eventdata.club]}
+                        </a>
+                      </>
+                    )}
                     <div className={styles["event-btns"]}>
                       {eventdata.rulebook_link ? (
                         <a
