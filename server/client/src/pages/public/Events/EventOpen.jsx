@@ -295,7 +295,7 @@ export default function EventOpen(props) {
                         {/* different registration Link for FROSTHACK */}
                         {MESSAGE || (
                           <a
-                            href={eventdata.shortsummary}
+                            href="https://frosthack-2k23.devfolio.co/"
                             target="_blank"
                             className={styles["create-team-register"]}
                           >
