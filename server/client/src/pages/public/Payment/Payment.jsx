@@ -20,7 +20,7 @@ const Payment = () => {
                 <h1 className={styles["payment-deadline"]}>
                   Deadline for fee payment
                   <br />
-                  23 Feb, 2023
+                  25 Feb, 2023
                 </h1>
                 {/* <h2>Payment to be made by CONTINGENT LEADER ONLY</h2> */}
                 <h2>Please fill the form after Payment</h2>
