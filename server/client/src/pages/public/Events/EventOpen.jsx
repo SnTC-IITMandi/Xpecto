@@ -21,7 +21,7 @@ export default function EventOpen(props) {
     setOpenEventTeam(false);
   };
   // some clubs have links to their websites
-  const clubsWithLinks = {"Frosthack": "Frosthack", "STAC":"Astrax"}
+  const clubsWithLinks = { Frosthack: "Frosthack", STAC: "Astrax" };
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -292,6 +292,18 @@ export default function EventOpen(props) {
                   <h2 className={styles["events-page-teamsize"]}>
                     {eventdata._id === "63dbf9a5de4b0c5e13d1befb" ? (
                       <>
+                        <div>
+                          Please Watch the video for frosthack registration on
+                          devfolio
+                        </div>
+                        <a
+                          href="https://youtu.be/gVLQ3RyRrgo"
+                          target="_blank"
+                          className={styles["create-team-register"]}
+                        >
+                          {/* redirect to external Frosthack registration page */}
+                          Video
+                        </a>
                         {/* different registration Link for FROSTHACK */}
                         {MESSAGE || (
                           <a
