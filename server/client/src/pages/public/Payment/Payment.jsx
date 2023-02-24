@@ -6,10 +6,7 @@ import axios from "axios";
 
 const Payment = () => {
   const [paymentDetails, setPaymentDetails] = useState(null);
-  const deadline = useMemo(() => {
-    if (!paymentDetails) return null;
-    return new Date(paymentDetails.deadline);
-  }, [paymentDetails]);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -62,15 +59,18 @@ const Payment = () => {
             <div className={styles["payment-main"]}>
               <div className={styles["content-container"]}>
                 <div className={styles["message"]}>
-                  <h1 className={styles["amount"]}>Rs. {paymentDetails.amount} per person</h1>
+                  <h1 className={styles["amount"]}>
+                    Rs. {paymentDetails.amount} per person
+                  </h1>
                   <h1>For offline participation</h1>
                   <h2>
-                    INCLUDED <br />{paymentDetails.includes}
+                    INCLUDED <br />
+                    {paymentDetails.includes}
                   </h2>
                   <h1 className={styles["payment-deadline"]}>
                     Deadline for fee payment
                     <br />
-                    {`${deadline.getDate()} ${deadline.toLocaleString("en-us", {month:"short"})}, ${deadline.getFullYear()}`}
+                    {paymentDetails.deadline}
                   </h1>
                   {/* <h2>Payment to be made by CONTINGENT LEADER ONLY</h2> */}
                   <h2>Please fill the form after Payment</h2>

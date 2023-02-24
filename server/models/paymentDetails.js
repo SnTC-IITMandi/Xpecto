@@ -10,7 +10,7 @@ const paymentDetailsSchema = mongoose.Schema({
     required: true,
   },
   deadline: {
-    type: Date,
+    type: String,
     required: true,
   },
   accountName: {
@@ -36,7 +36,7 @@ const paymentDetailsSchema = mongoose.Schema({
   formLink: {
     type: String,
     required: true,
-  }
+  },
 });
 
 const PaymentDetails = mongoose.model("PaymentDetails", paymentDetailsSchema);
