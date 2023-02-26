@@ -183,6 +183,14 @@ function SidebarMenu() {
           >
             <Link onClick={eventClickHandler}>EVENTS</Link>
           </button>
+          <button
+            style={{ "--animation-order": 5 }}
+            className={styles.sidebarBtn}
+          >
+            <Link smooth to="/keytalk" onClick={linkClicked}>
+              KEYTALKS
+            </Link>
+          </button>
           {!loadingUser && isAuthenticated ? (
             <button
               style={{ "--animation-order": 5 }}
@@ -233,14 +241,6 @@ function SidebarMenu() {
           >
             <Link smooth to="/faq" onClick={linkClicked}>
               FAQS
-            </Link>
-          </button>
-          <button
-            style={{ "--animation-order": 9 }}
-            className={styles.sidebarBtn}
-          >
-            <Link smooth to="/keytalk" onClick={linkClicked}>
-              KEYTALKS
             </Link>
           </button>
         </div>
