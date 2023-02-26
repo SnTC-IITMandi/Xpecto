@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ThreeCircles } from "react-loader-spinner";
 import Layout from "../component/Layout/Layout";
 import styles from "./KeyTalk.module.css";
-import keytalk_fake from "./keytalk_fake.json";
+// import keytalk_fake from "./keytalk_fake.json";
 
 function KeyTalk() {
   const [keytalks, setKeytalks] = useState([]);
@@ -20,7 +20,7 @@ function KeyTalk() {
       const data = await axios.get(url);
 
       setKeytalks((prev) => data.data.data);
-      setKeytalks(keytalk_fake);
+      // setKeytalks(keytalk_fake);
       // console.log();
       setIsLoading((prev) => false);
       // const teamsObj = {};
@@ -37,7 +37,7 @@ function KeyTalk() {
   return (
     <>
       <Layout
-        dataColor="#00b4d8"
+        dataColor="#48d800"
         // dataColor="#00ddcc"
       >
         <div className={styles["header"]}>
@@ -55,12 +55,13 @@ function KeyTalk() {
               visible={true}
               ariaLabel="three-circles-rotating"
               outerCircleColor=""
-              innerCircleColor="#00b4d8"
+              innerCircleColor="#48d800"
               middleCircleColor=""
             />
           </div>
         ) : keytalks.length > 0 ? (
           <main className={styles["container"]}>
+            <hr className={styles["hr__break"]} />
             {keytalks.map((keytalk, index) => {
               return <KeyTalkOne key={keytalk._id} keytalk={keytalk} />;
             })}
@@ -76,20 +77,56 @@ function KeyTalk() {
 export default KeyTalk;
 
 const KeyTalkOne = ({ keytalk }) => {
-    return (
-        <div className={styles["keytalk"]}>
+  return (
+    <>
+      <div className={styles["keytalk"]}>
         {/* <div className={styles["keytalk__image"]}>
             <img src={keytalk.imageCover} alt="" />
         </div> */}
         <div className={styles["keytalk__info"]}>
-            <div className={styles["keytalk__info__heading"]}>
+          <div className={styles["keytalk__info__heading"]}>
             <h1>{keytalk.title}</h1>
-            <p className={styles["keytalk__info__duration"]}>{keytalk.duration} min</p>
-            </div>
-            <div className={styles["keytalk__info__description"]}>
+            {/* <p className={styles["keytalk__info__duration"]}>
+              Duration: {keytalk.duration} min
+            </p> */}
+          </div>
+          <div className={styles["keytalk__info__description"]}>
             <p>{keytalk.description}</p>
-            </div>
+          </div>
         </div>
+        <div className={styles["keytalk__speakers"]}>
+          <h3>speakers</h3>
+          <div className={styles["keytalk__speakers__content"]}>
+            {keytalk.speakers.map((speaker) => {
+              return (
+                <Speaker key={speaker.name + keytalk.title} speaker={speaker} />
+              );
+            })}
+          </div>
         </div>
-    );
-}
+      </div>
+      <hr className={styles["hr__break"]} />
+    </>
+  );
+};
+
+const Speaker = ({ speaker }) => {
+  return (
+    <>
+      <a href={(speaker.link && speaker.link !== "" ? speaker.link : undefined)} target="_blank" className={styles["speaker"]}>
+        <div className={styles["speaker__image"]}>
+          <img
+            src={`https://drive.google.com/uc?export=view&id=${
+              speaker.photo.split("=")[1]
+            }`}
+            alt={speaker.name}
+          />
+        </div>
+        <div className={styles["speaker__info"]}>
+          <h4>{speaker.name}</h4>
+          <p>{speaker.qualification}</p>
+        </div>
+      </a>
+    </>
+  );
+};

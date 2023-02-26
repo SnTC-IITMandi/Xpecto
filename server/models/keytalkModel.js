@@ -14,6 +14,9 @@ const keytalkSchema = mongoose.Schema({
       },
       photo: String,
       qualification: String,
+      link: {
+        type: String,
+      },
     },
   ],
   duration: {
