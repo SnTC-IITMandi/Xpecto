@@ -1,5 +1,5 @@
 :root {
-  --main-keytalk-color: #48d800 !important;
+  --main-keytalk-color: #6dff8d !important;
 }
 
 .container * {
@@ -75,7 +75,7 @@
 .keytalk {
   width: 100%;
   color: #fff;
-  padding: 0rem 2.5rem;
+  /* padding: 0rem 2.5rem; */
   position: relative;
   display: flex;
   flex-direction: row;
@@ -87,13 +87,13 @@
   display: grid;
 }
 .keytalk__info__heading {
-  font-size: 2.5rem;
-  font-weight: 600;
   margin-bottom: 2rem;
   font-family: "Android 101";
   text-align: start;
 }
 .keytalk__info__heading h1 {
+  font-size: 2rem;
+  font-weight: lighter !important;
   color: var(--main-keytalk-color);
 }
 .keytalk__info__duration {
@@ -132,14 +132,14 @@
   font-family: "Android 101";
   text-align: start;
 }
-.keytalk__speakers__content{
-    height: 230px;
-    overflow-y: auto;
+.keytalk__speakers__content {
+  /* height: 230px; */
+  overflow-y: auto;
 }
-.keytalk__speakers__content::-webkit-scrollbar{
+.keytalk__speakers__content::-webkit-scrollbar {
   width: 0;
 }
-.speaker{
+.speaker {
   text-decoration: none;
   color: white;
   background-color: rgb(41, 41, 41);
@@ -151,63 +151,63 @@
   justify-content: start;
   align-items: center;
 }
-.speaker__image{
-  width: 45px;
-  height: 45px;
+.speaker__image {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background-color: white;
   margin-right: 10px;
   overflow: clip;
   flex-shrink: 0;
 }
-.speaker__image img{
+.speaker__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.speaker__info h4{
+.speaker__info h4 {
   font-size: large;
   font-weight: 600;
   margin-bottom: 0.5rem;
   text-align: start;
 }
-.speaker__info p{
+.speaker__info p {
   color: var(--main-keytalk-color);
   font-size: medium;
   font-weight: 600;
   margin-bottom: 0.5rem;
   text-align: start;
 }
-.hr__break{
+.hr__break {
   border: 1px solid var(--main-keytalk-color);
   width: 50%;
 }
 /* media query 900px*/
 @media (max-width: 900px) {
-  .keytalk{
+  .keytalk {
     flex-direction: column;
   }
-  .keytalk__info{
+  .keytalk__info {
     width: auto;
   }
-  .keytalk__info__heading{
+  .keytalk__info__heading {
     text-align: center;
   }
-  .keytalk__info__description{
+  .keytalk__info__description {
     text-align: center;
   }
-  .keytalk__speakers{
+  .keytalk__speakers {
     width: 100%;
   }
-  .speaker__image{
-    width: 30px;
-    height: 30px;
+  .speaker__image {
+    width: 100px;
+    height: 100px;
     margin: 5px;
   }
-  .speaker__info h4{
+  .speaker__info h4 {
     font-size: medium;
   }
-  .speaker__info p{
+  .speaker__info p {
     font-size: small;
   }
 }

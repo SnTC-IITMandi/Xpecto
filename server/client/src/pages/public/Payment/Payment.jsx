@@ -72,9 +72,7 @@ const Payment = () => {
                     <br />
                     {paymentDetails.deadline}
                   </h1>
-                  {/* <h2>Payment to be made by CONTINGENT LEADER ONLY</h2> */}
                   <h2>Please fill the form after Payment</h2>
-                  {/* <h2></h2> */}
                 </div>
                 <div className={styles["content-inner"]}>
                   <a

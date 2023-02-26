@@ -37,7 +37,7 @@ function KeyTalk() {
   return (
     <>
       <Layout
-        dataColor="#48d800"
+        dataColor="#6dff8d"
         // dataColor="#00ddcc"
       >
         <div className={styles["header"]}>
@@ -73,7 +73,6 @@ function KeyTalk() {
     </>
   );
 }
-
 export default KeyTalk;
 
 const KeyTalkOne = ({ keytalk }) => {
@@ -86,9 +85,11 @@ const KeyTalkOne = ({ keytalk }) => {
         <div className={styles["keytalk__info"]}>
           <div className={styles["keytalk__info__heading"]}>
             <h1>{keytalk.title}</h1>
-            {/* <p className={styles["keytalk__info__duration"]}>
-              Duration: {keytalk.duration} min
-            </p> */}
+            {keytalk.duration ? (
+              <p className={styles["keytalk__info__duration"]}>
+                Duration: {keytalk.duration} min
+              </p>
+            ) : null}
           </div>
           <div className={styles["keytalk__info__description"]}>
             <p>{keytalk.description}</p>
@@ -113,7 +114,11 @@ const KeyTalkOne = ({ keytalk }) => {
 const Speaker = ({ speaker }) => {
   return (
     <>
-      <a href={(speaker.link && speaker.link !== "" ? speaker.link : undefined)} target="_blank" className={styles["speaker"]}>
+      <a
+        href={speaker.link && speaker.link !== "" ? speaker.link : undefined}
+        target="_blank"
+        className={styles["speaker"]}
+      >
         <div className={styles["speaker__image"]}>
           <img
             src={`https://drive.google.com/uc?export=view&id=${
