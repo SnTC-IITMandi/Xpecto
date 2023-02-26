@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.fd7af650.css",
-    "main.js": "/static/js/main.2a3646aa.js",
+    "main.css": "/static/css/main.f5a63c69.css",
+    "main.js": "/static/js/main.9eb58337.js",
     "static/media/background.jpg": "/static/media/background.abe945b916887ee0ac0c.jpg",
     "static/media/Android_101.ttf": "/static/media/Android_101.1bc6db32b397d97d519e.ttf",
-    "static/media/xpecto-logo.svg": "/static/media/xpecto-logo.8ce67e15f25de0d09d46a2bfd6946528.svg",
+    "static/media/xpecto-logo.svg": "/static/media/xpecto-logo.b0d4bce09155c16434fd6d78749f0643.svg",
     "index.html": "/index.html",
-    "static/media/navbar-bottom.svg": "/static/media/navbar-bottom.218dc8ea2ff59ce86c5b722546e299e9.svg",
-    "static/media/navbar-top.svg": "/static/media/navbar-top.2dba7768d71bc15c8bd500dd1252b21d.svg",
-    "static/media/navbar-middle.svg": "/static/media/navbar-middle.12382743a2af97c1245f0070d11d3f95.svg",
-    "static/media/backtop-btn.svg": "/static/media/backtop-btn.b74cd2ea3474af32f546c5b4fda02477.svg",
-    "main.fd7af650.css.map": "/static/css/main.fd7af650.css.map",
-    "main.2a3646aa.js.map": "/static/js/main.2a3646aa.js.map"
+    "static/media/navbar-bottom.svg": "/static/media/navbar-bottom.f4c4a3a590db1cf3f58316b4794c52a8.svg",
+    "static/media/navbar-top.svg": "/static/media/navbar-top.7abe0c45c72fc1e2f738cd157ab34d4c.svg",
+    "static/media/navbar-middle.svg": "/static/media/navbar-middle.9a9ce96f0b15ba41b85ab67c8e5f0edd.svg",
+    "static/media/backtop-btn.svg": "/static/media/backtop-btn.b31183adcdf67ebce747833031f5909f.svg",
+    "main.f5a63c69.css.map": "/static/css/main.f5a63c69.css.map",
+    "main.9eb58337.js.map": "/static/js/main.9eb58337.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd7af650.css",
-    "static/js/main.2a3646aa.js"
+    "static/css/main.f5a63c69.css",
+    "static/js/main.9eb58337.js"
   ]
 }
