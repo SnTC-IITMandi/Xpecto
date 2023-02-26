@@ -235,6 +235,14 @@ function SidebarMenu() {
               FAQS
             </Link>
           </button>
+          <button
+            style={{ "--animation-order": 9 }}
+            className={styles.sidebarBtn}
+          >
+            <Link smooth to="/keytalk" onClick={linkClicked}>
+              KEYTALKS
+            </Link>
+          </button>
         </div>
       </div>
 

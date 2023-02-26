@@ -1,0 +1,213 @@
+:root {
+  --main-keytalk-color: #48d800 !important;
+}
+
+.container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  /* max-width: 750px; */
+  padding-left: 0;
+  padding-right: 0;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-heading {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  color: var(--main-keytalk-color);
+  text-align: left;
+  font-size: 4rem;
+  padding: 2.5rem;
+  margin-left: 3rem;
+  letter-spacing: 2.5px;
+  z-index: 50;
+  margin-top: 50px;
+  font-family: "Android 101";
+}
+
+@media (max-width: 600px) {
+  .main-heading {
+    font-size: 3rem;
+    padding: 2rem;
+    margin-left: 0px;
+    text-align: center;
+  }
+}
+
+.loading {
+  /* font-size: 2.5rem;
+    color: var(--main-keytalk-color);
+    font-weight: bold; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+}
+
+.coming-soon {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  align-self: center !important;
+  justify-self: center !important;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  align-items: center;
+  /* max-width: 750px; */
+  padding-top: 50px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.keytalk {
+  width: 100%;
+  color: #fff;
+  padding: 0rem 2.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.keytalk__info {
+  width: 50%;
+  margin: 1.5rem;
+  display: grid;
+}
+.keytalk__info__heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-family: "Android 101";
+  text-align: start;
+}
+.keytalk__info__heading h1 {
+  color: var(--main-keytalk-color);
+}
+.keytalk__info__duration {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.keytalk__info__description {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  /* text-align: justify; */
+  text-align: start;
+  justify-self: center;
+}
+.keytalk__speakers {
+  padding: 25px;
+  /* background-color: #000; */
+  border-radius: 10px;
+  border: 5px solid var(--main-keytalk-color);
+  margin: 1.5rem;
+  width: 50%;
+  height: fit-content;
+  overflow: clip;
+  align-self: center;
+  backdrop-filter: blur(10px);
+
+  /* padding-left: 10px; */
+}
+.keytalk__speakers h3 {
+  border-bottom: 2px solid var(--main-keytalk-color);
+  width: fit-content;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem;
+  font-family: "Android 101";
+  text-align: start;
+}
+.keytalk__speakers__content{
+    height: 230px;
+    overflow-y: auto;
+}
+.keytalk__speakers__content::-webkit-scrollbar{
+  width: 0;
+}
+.speaker{
+  text-decoration: none;
+  color: white;
+  background-color: rgb(41, 41, 41);
+  margin: 5px 0;
+  border-radius: 7px;
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.speaker__image{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+  overflow: clip;
+  flex-shrink: 0;
+}
+.speaker__image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.speaker__info h4{
+  font-size: large;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: start;
+}
+.speaker__info p{
+  color: var(--main-keytalk-color);
+  font-size: medium;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: start;
+}
+.hr__break{
+  border: 1px solid var(--main-keytalk-color);
+  width: 50%;
+}
+/* media query 900px*/
+@media (max-width: 900px) {
+  .keytalk{
+    flex-direction: column;
+  }
+  .keytalk__info{
+    width: auto;
+  }
+  .keytalk__info__heading{
+    text-align: center;
+  }
+  .keytalk__info__description{
+    text-align: center;
+  }
+  .keytalk__speakers{
+    width: 100%;
+  }
+  .speaker__image{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+  }
+  .speaker__info h4{
+    font-size: medium;
+  }
+  .speaker__info p{
+    font-size: small;
+  }
+}

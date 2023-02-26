@@ -27,6 +27,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import FixedLogo from "./pages/public/component/FixedLogo/FixedLogo";
 import Payment from "./pages/public/Payment/Payment";
 import DementiaPage from "./pages/public/Events/DementiaPage";
+import KeyTalk from "./pages/public/KeyTalk/KeyTalk";
 function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -50,6 +51,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/faq" element={<FaqPage />} />
+            <Route path="/keytalk" element={<KeyTalk />} />
             <Route
               path="/profile/created-teams/:id"
               element={<CreatedTeamPage />}
