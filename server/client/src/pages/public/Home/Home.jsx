@@ -25,6 +25,7 @@ import { Modal, Box } from "@mui/material";
 import LayoutPage from "../component/Layout/Layout";
 import Contact from "../component/Contact/Contact";
 import { motion } from "framer-motion";
+import Time_line from "../component/Time_line/Time_line";
 export default function Home() {
   const navigate = useNavigate();
 
@@ -130,18 +131,16 @@ export default function Home() {
             bounce: 0.4,
             duration: 1,
           }}
-          className={`${styles["fixed-logo"]} ${
-            fixedLogoVisible && styles["fixed-logo-visible"]
-          }`}
+          className={`${styles["fixed-logo"]} ${fixedLogoVisible && styles["fixed-logo-visible"]
+            }`}
         >
           <FixedLogo />
         </motion.div>
         <HashLink
           smooth
           to="/#"
-          className={`${styles["back-to-top"]} ${
-            fixedLogoVisible && styles["back-to-top-visible"]
-          }`}
+          className={`${styles["back-to-top"]} ${fixedLogoVisible && styles["back-to-top-visible"]
+            }`}
         >
           <BackToTop />
         </HashLink>
@@ -152,13 +151,13 @@ export default function Home() {
           className={styles["section1"]}
           id="#"
 
-          // initial={{opacity:0}}
-          // whileInView={{opacity:1 }}
-          // transition={{
-          //   // type: "spring",
-          //   // bounce: 0.4,
-          //   duration: 1,
-          // }}
+        // initial={{opacity:0}}
+        // whileInView={{opacity:1 }}
+        // transition={{
+        //   // type: "spring",
+        //   // bounce: 0.4,
+        //   duration: 1,
+        // }}
         >
           {/* <img
             className={styles["section1-plus"]}
@@ -254,6 +253,7 @@ export default function Home() {
             ""
           )}
         </div>
+
         <motion.div
           initial={{ y: 0 }}
           whileInView={{ y: 0 }}
@@ -280,6 +280,20 @@ export default function Home() {
         >
           <Ambassador />
         </motion.div>
+        <motion.div
+          initial={{ y: 0 }}
+          whileInView={{ y: 0 }}
+          transition={{
+            // type: "spring",
+            // bounce: 0.4,
+            duration: 1,
+          }}
+          className={styles["section1"]}
+          id="about"
+        >
+          <Time_line />
+        </motion.div>
+
         <div className={styles["section2"]} id="contact">
           <Contact />
         </div>

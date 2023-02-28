@@ -3,10 +3,7 @@ const mongoose = require("mongoose");
 const connectDB = async () => {
     try {
         // const Database = "mongodb://localhost:27017/xpecto"
-         const Database = process.env.DATABASE_URI.replace(
-             "<password>",
-             process.env.DATABASE_PASSWORD
-         );
+         const Database ="mongodb+srv://xpecto:xpectoweb@cluster0.jnsftw4.mongodb.net/xpectoMainDB?retryWrites=true&w=majority";
         mongoose
             .connect(Database, {
                 useNewUrlParser: true,

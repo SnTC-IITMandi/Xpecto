@@ -12,6 +12,7 @@ const workshopRouter = require("./routes/workshopRoutes");
 const paymentRouter = require("./routes/paymentRouters");
 const userRouter = require("./routes/userRoute");
 const eventTeamRouter = require("./routes/teamRoutes");
+const timelineRouter = require("./routes/timelineRoutes");
 const globalErrorController = require("./controllers/globalErrorController");
 // INITIALIZING EXPRESS APP
 const app = express();
@@ -53,6 +54,7 @@ app.use("/api/webinars", webinarRouter);
 app.use("/api/workshops", workshopRouter);
 app.use("/api/user", userRouter);
 app.use("/api/eventTeam", eventTeamRouter);
+app.use("/api/timeline", timelineRouter);
 
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "client/build", "index.html"));
