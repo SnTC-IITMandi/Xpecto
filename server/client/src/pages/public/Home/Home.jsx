@@ -285,6 +285,19 @@ export default function Home() {
                 >
                     <Ambassador />
                 </motion.div>
+                <motion.div
+                    initial={{ y: 0 }}
+                    whileInView={{ y: 0 }}
+                    transition={{
+                        // type: "spring",
+                        // bounce: 0.4,
+                        duration: 1,
+                    }}
+                    className={styles["section1"]}
+                    id="about"
+                >
+                    <Time_line/>
+                </motion.div>
                 <div className={styles["section2"]} id="contact">
                     <Contact />
                 </div>
