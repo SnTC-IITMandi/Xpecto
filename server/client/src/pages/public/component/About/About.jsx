@@ -72,6 +72,11 @@ export default function About() {
           intense events ranging from hackathons, contests, and conferences, all
           topped with an icing of entertaining shows and events.
         </motion.p>
+        <div className={styles["just-sponsors-new"]}>
+          <Link to="/sponsors" className={`${styles["just"]}`}>
+            Our Sponsors
+          </Link>
+        </div>
         <Grid container>
           <Grid
             item
@@ -101,27 +106,6 @@ export default function About() {
             </Link>
           </Grid>
         </Grid>
-        <p className={styles["heading1"]}>Our Sponsors</p>
-        <div className={styles["sponsors-container"]}>
-          <motion.div
-            initial={{ y: 100 }}
-            whileInView={{ y: 0 }}
-            transition={{
-              delay: 0.1,
-              duration: 1,
-            }}
-            className={styles["sponsor-card"]}
-          >
-            <div className={styles["sponsor-card-inner-container"]}>
-              <img
-                src={`${process.env.PUBLIC_URL}/sponsors/threeway.svg`}
-                alt="Threeway logo"
-              />
-              <div className={styles["sponsor-name"]}>Threeway</div>
-              <div className={styles["sponsor-type"]}>Web3 Partner</div>
-            </div>
-          </motion.div>
-        </div>
       </div>
     </>
   );
