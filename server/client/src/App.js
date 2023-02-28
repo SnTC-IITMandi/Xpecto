@@ -28,6 +28,7 @@ import FixedLogo from "./pages/public/component/FixedLogo/FixedLogo";
 import Payment from "./pages/public/Payment/Payment";
 import DementiaPage from "./pages/public/Events/DementiaPage";
 import KeyTalk from "./pages/public/KeyTalk/KeyTalk";
+import Sponsors from "./pages/public/SponsorsNew/SponsorsNew";
 function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -59,6 +60,7 @@ function App() {
             <Route path="/campusambassadors" element={<AmbassadorPage />} />
             <Route path="/ourteam" element={<OurTeamPage />} />
             <Route path="/payment-info" element={<Payment />} />
+            <Route path="/sponsors" element={<Sponsors />} />
             <Route path="*" element={<Navigate to="/" />} />
             {/* <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/event" element={<Eventadmin />} />
