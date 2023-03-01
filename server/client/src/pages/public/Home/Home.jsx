@@ -259,6 +259,8 @@ export default function Home() {
                         ""
                     )}
                 </div>
+                <Time_line/>
+
                 <motion.div
                     initial={{ y: 0 }}
                     whileInView={{ y: 0 }}
@@ -296,7 +298,6 @@ export default function Home() {
                     className={styles["section1"]}
                     id="about"
                 >
-                    <Time_line/>
                 </motion.div>
                 <div className={styles["section2"]} id="contact">
                     <Contact />
