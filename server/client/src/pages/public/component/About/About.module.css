@@ -23,7 +23,7 @@
   font-weight: 400;
   font-size: 1.25rem;
   padding-top: 30px;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
   word-spacing: 5px;
 }
 .aboutcontent {
@@ -85,6 +85,18 @@
   -moz-transform: translateY(5px);
   -ms-transform: translateY(5px);
   -o-transform: translateY(5px);
+}
+
+.just-sponsors-new {
+  /* margin-top: 1rem; */
+
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.just-sponsors-new a {
+  font-size: 1.75rem;
 }
 @media screen and (max-width: 767px) {
   .aboutcontainer {
