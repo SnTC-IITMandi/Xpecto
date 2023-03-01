@@ -25,7 +25,7 @@ import { Modal, Box } from "@mui/material";
 import LayoutPage from "../component/Layout/Layout";
 import Contact from "../component/Contact/Contact";
 import { motion } from "framer-motion";
-// import Time_line from "../component/Time_line/Time_line";
+import Time_line from "../component/Time_line/Time_line";
 export default function Home() {
     const navigate = useNavigate();
 
@@ -285,7 +285,7 @@ export default function Home() {
                 >
                     <Ambassador />
                 </motion.div>
-                {/* <motion.div
+                <motion.div
                     initial={{ y: 0 }}
                     whileInView={{ y: 0 }}
                     transition={{
@@ -297,7 +297,7 @@ export default function Home() {
                     id="about"
                 >
                     <Time_line/>
-                </motion.div> */}
+                </motion.div>
                 <div className={styles["section2"]} id="contact">
                     <Contact />
                 </div>
