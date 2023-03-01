@@ -12,7 +12,11 @@ const TimelineSchema = mongoose.Schema({
     eventdate: {
         type: String,
         required: true,
-    }
+    },
+    venue: {
+        type: String,
+        required: true,
+    },
 });
 
 const Timeline = mongoose.model("Timeline", TimelineSchema);
