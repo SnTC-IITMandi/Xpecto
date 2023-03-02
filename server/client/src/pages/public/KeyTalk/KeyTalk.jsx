@@ -35,42 +35,44 @@ function KeyTalk() {
     getKeytalks();
   }, []);
   return (
-    <>
-      <Layout
-        dataColor="#6dff8d"
-        // dataColor="#00ddcc"
-      >
-        <div className={styles["header"]}>
-          <h1 className={styles["main-heading"]}>key talks</h1>
-        </div>
+      <>
+          <Layout
+              dataColor="#6dff8d"
+              // dataColor="#00ddcc"
+          >
+              <div className={styles["header"]}>
+                  <h1 className={styles["main-heading"]}>key talks</h1>
+              </div>
 
-        {isLoading ? (
-          <div className={styles["loading"]}>
-            <ThreeCircles
-              height="150px"
-              width="150px"
-              color="#fff"
-              wrapperStyle={{}}
-              wrapperClass=""
-              visible={true}
-              ariaLabel="three-circles-rotating"
-              outerCircleColor=""
-              innerCircleColor="#48d800"
-              middleCircleColor=""
-            />
-          </div>
-        ) : keytalks.length > 0 ? (
-          <main className={styles["container"]}>
-            <hr className={styles["hr__break"]} />
-            {keytalks.map((keytalk, index) => {
-              return <KeyTalkOne key={keytalk._id} keytalk={keytalk} />;
-            })}
-          </main>
-        ) : (
-          <h1 className={styles["coming-soon"]}>Coming Soon</h1>
-        )}
-      </Layout>
-    </>
+              {isLoading ? (
+                  <div className={styles["loading"]}>
+                      <ThreeCircles
+                          height="150px"
+                          width="150px"
+                          color="#fff"
+                          wrapperStyle={{}}
+                          wrapperClass=""
+                          visible={true}
+                          ariaLabel="three-circles-rotating"
+                          outerCircleColor=""
+                          innerCircleColor="#6dff8d"
+                          middleCircleColor=""
+                      />
+                  </div>
+              ) : keytalks.length > 0 ? (
+                  <main className={styles["container"]}>
+                      <hr className={styles["hr__break"]} />
+                      {keytalks.map((keytalk, index) => {
+                          return (
+                              <KeyTalkOne key={keytalk._id} keytalk={keytalk} />
+                          );
+                      })}
+                  </main>
+              ) : (
+                  <h1 className={styles["coming-soon"]}>Coming Soon</h1>
+              )}
+          </Layout>
+      </>
   );
 }
 export default KeyTalk;

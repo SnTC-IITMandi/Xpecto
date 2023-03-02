@@ -128,12 +128,12 @@ export default function Home() {
         <>
             <LayoutPage>
                 <motion.div
-                    initial={{ y: -100 }}
+                    initial={{ y: -50 }}
                     whileInView={{ y: 0 }}
                     transition={{
                         type: "spring",
                         bounce: 0.4,
-                        duration: 1,
+                        duration: 0.75,
                     }}
                     className={`${styles["fixed-logo"]} ${
                         fixedLogoVisible && styles["fixed-logo-visible"]
@@ -228,7 +228,7 @@ export default function Home() {
           /> */}
                     <HashLink
                         smooth
-                        to="/#about"
+                        to="/#timeline"
                         className={styles["section1-scrolldown"]}
                     >
                         <motion.img
@@ -259,8 +259,19 @@ export default function Home() {
                         ""
                     )}
                 </div>
-                <Time_line/>
-
+                <motion.div
+                    initial={{ y: 0 }}
+                    whileInView={{ y: 0 }}
+                    transition={{
+                        // type: "spring",
+                        // bounce: 0.4,
+                        duration: 1,
+                    }}
+                    className={styles["section1"]}
+                    id="timeline"
+                >
+                    <Time_line />
+                </motion.div>
                 <motion.div
                     initial={{ y: 0 }}
                     whileInView={{ y: 0 }}
@@ -283,21 +294,9 @@ export default function Home() {
                         duration: 1,
                     }}
                     className={styles["section1"]}
-                    id="about"
+                    id="ambassador"
                 >
                     <Ambassador />
-                </motion.div>
-                <motion.div
-                    initial={{ y: 0 }}
-                    whileInView={{ y: 0 }}
-                    transition={{
-                        // type: "spring",
-                        // bounce: 0.4,
-                        duration: 1,
-                    }}
-                    className={styles["section1"]}
-                    id="about"
-                >
                 </motion.div>
                 <div className={styles["section2"]} id="contact">
                     <Contact />
