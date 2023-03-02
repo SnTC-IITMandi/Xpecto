@@ -316,20 +316,6 @@ export default function EventOpen(props) {
                           </a>
                         )}
                       </>
-                    ) : eventdata._id === "63ff14d5fa74f8926710b77f" ? (
-                      <>
-                        {/* different registration Link for case-a-thon */}
-                        {MESSAGE || (
-                          <a
-                            href="https://unstop.com/p/case-a-thon-xpecto-iit-mandi-627855/"
-                            target="_blank"
-                            className={styles["create-team-register"]}
-                          >
-                            {/* redirect to external case-a-thon registration page */}
-                            Register for the Event
-                          </a>
-                        )}
-                      </>
                     ) : (
                       <>
                         {MESSAGE}
