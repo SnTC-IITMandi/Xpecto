@@ -1,56 +1,67 @@
-.heading{
-   font-size: 4rem;
-  color: #F156FA;
-  font-weight: 700;
-  text-align: left;
-  padding-left: 10%;
-  font-family: 'Android 101';
-  text-shadow: #F156FA 0 0 8px;
-
+.heading {
+    font-size: 4rem;
+    color: #f156fa;
+    font-weight: 700;
+    text-align: left;
+    padding-left: 10%;
+    font-family: "Android 101";
+    text-shadow: #f156fa 0 0 8px;
 }
-.imagediv{
+.imagediv {
     padding-top: 20px;
 }
-.image{
+.image {
     height: 500px;
     width: 50%;
-    border: 2px solid #F156FA;
+    border: 2px solid #f156fa;
     border-radius: 5px;
-    box-shadow: 0px 0px  30px -2px #F156FA;
+    /* box-shadow: 0px 0px  30px -2px #F156FA; */
 }
 
-.name{
+.name {
     font-size: 3rem;
-    color: #F156FA;
+    color: #f156fa;
     font-weight: 600;
-    font-family: 'Android 101';
-
+    font-family: "Android 101";
 }
-.venue{
+.venue {
     font-size: 2rem;
-    color: #F156FA;
+    color: #f156fa;
     font-weight: 600;
     margin-top: -50px;
-    font-family: 'Android 101';
-
+    font-family: "Android 101";
 }
-@media (max-width: 600px)  {
-    .heading{
+@media (max-width: 600px) {
+    .heading {
         font-size: 2.2rem;
         text-align: center;
         padding-left: 0px;
     }
-    .image{
+    .image {
         height: 400px;
         width: 85%;
     }
-    .name{
+    .name {
         font-size: 1.7rem;
     }
-    .venue{
+    .venue {
         margin-top: -20px;
 
         font-size: 1rem;
     }
-    
+}
+@media (max-width: 400px) {
+    .image {
+        height: 300px;
+        width: 250px;
+    }
+    .name {
+        font-size: 1.6rem;
+    }
+    .venue {
+        font-weight: lighter;
+        margin-top: -20px;
+
+        font-size: 0.9rem;
+    }
 }

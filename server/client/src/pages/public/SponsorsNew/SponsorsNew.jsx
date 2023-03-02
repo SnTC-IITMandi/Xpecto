@@ -98,12 +98,14 @@ const SponsorCard = ({ name, type, logo }) => {
         <div className={styles["sponsors-container"]}>
             <div className={styles["sponsor-card"]}>
                 <div className={styles["sponsor-card-inner-container"]}>
-                    <img
-                        src={`https://drive.google.com/uc?export=view&id=${
-                            logo.split("=")[1]
-                        }`}
-                        alt={name}
-                    />
+                    {logo && (
+                        <img
+                            src={`https://drive.google.com/uc?export=view&id=${
+                                logo.split("=")[1]
+                            }`}
+                            alt={name}
+                        />
+                    )}
                     <div className={styles["sponsor-name"]}>{name}</div>
                     <div className={styles["sponsor-type"]}>{type}</div>
                 </div>

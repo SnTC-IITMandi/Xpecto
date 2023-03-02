@@ -260,7 +260,6 @@ export default function Home() {
                         ""
                     )}
                 </div>
-                <Pronight/>
                 <motion.div
                     initial={{ y: 0 }}
                     whileInView={{ y: 0 }}
@@ -272,9 +271,9 @@ export default function Home() {
                     className={styles["section1"]}
                     id="timeline"
                 >
-                    
                     <Time_line />
                 </motion.div>
+                <Pronight />
                 <motion.div
                     initial={{ y: 0 }}
                     whileInView={{ y: 0 }}

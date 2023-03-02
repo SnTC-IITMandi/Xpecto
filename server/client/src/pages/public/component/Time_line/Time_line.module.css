@@ -1,7 +1,7 @@
 :root {
     --time_line-main-color: #49fed6;
 }
-.time_line_container{
+.time_line_container {
     padding-left: 10%;
     padding-right: 10%;
     width: 100%;
@@ -17,11 +17,10 @@
     letter-spacing: 2.5px;
     z-index: 1;
     margin-top: 50px;
-    font-family: 'Android 101';
+    font-family: "Android 101";
     text-shadow: var(--time_line-main-color) 0 0 7.5px;
     margin-bottom: 0;
     padding-bottom: 0;
-
 }
 
 .time_line-page-subheading {
@@ -31,16 +30,15 @@
     color: var(--time_line-main-color);
     text-align: center;
     font-size: 2.5rem;
-    padding: 2.0rem;
+    padding: 2rem;
     margin-left: 0rem;
     letter-spacing: 2.5px;
     z-index: 1;
     /* margin-top: ; */
-    font-family: 'Android 101';
+    font-family: "Android 101";
     text-shadow: 0 0 1.5px var(--time_line-main-color);
     width: 70%;
     margin: auto;
-
 }
 .time_line-page-subheading1 {
     position: relative;
@@ -49,31 +47,29 @@
     color: var(--time_line-main-color);
     text-align: center;
     font-size: 2.5rem;
-    padding: 2.0rem;
+    padding: 2rem;
     margin-left: 0rem;
     letter-spacing: 2.5px;
     z-index: 50;
     /* margin-top: ; */
-    font-family: 'Android 101';
+    font-family: "Android 101";
     text-shadow: 0 0 1.5px var(--time_line-main-color);
     width: 70%;
     margin: auto;
-
 }
-.time_line-page-subheading-line{
-   
+.time_line-page-subheading-line {
     align-self: center;
     margin: auto;
     margin-top: -40px;
 }
-.time_line-page-button{
+.time_line-page-button {
     width: 70px;
     height: 55px;
     -webkit-clip-path: polygon(100% 0, 100% 65%, 54% 100%, 0 100%, 0 0);
     clip-path: polygon(100% 0, 100% 75%, 74% 100%, 0 100%, 0 0);
     background: var(--time_line-main-color);
     z-index: 1;
-    font-family: 'Android 101';
+    font-family: "Android 101";
     font-size: medium;
     text-align: center;
     vertical-align: baseline;
@@ -81,143 +77,140 @@
     font-weight: bold;
     margin: auto;
     cursor: pointer;
-   padding: 10px;
-  }
-  .end{
+    padding: 10px;
+}
+.end {
     align-self: center;
-  }
-.active{
+}
+.active {
     filter: drop-shadow(0px 0px 15px white);
     align-self: center;
 }
 
-.time_line-page-grid{
+.time_line-page-grid {
     display: grid;
-    grid-template-columns: 1fr  4fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
 }
-.time_line-page-para{
-
+.time_line-page-para {
     margin: 0;
     padding: 0;
     color: white;
     text-align: center;
-    font-size: 2.0rem;
-    padding: 2.0rem;
+    font-size: 2rem;
+    padding: 2rem;
     margin-left: 0rem;
     letter-spacing: 2.5px;
     z-index: 1;
     /* margin-top: ; */
-    font-family: 'Android 101';
+    font-family: "Android 101";
     text-shadow: 0 0 1.5px var(--time_line-main-color);
-    
 }
-.time_line-page-para1{
+.time_line-page-para1 {
     z-index: 1;
 
     margin: 0;
     padding: 0;
     color: white;
     text-align: center;
-    font-size: 2.0rem;
-    padding: 2.0rem;
+    font-size: 2rem;
+    padding: 2rem;
     letter-spacing: 2.5px;
     z-index: 1;
     /* margin-top: ; */
-    font-family: 'Android 101';
+    font-family: "Android 101";
     text-shadow: 0 0 1.5px var(--time_line-main-color);
-    
-    
 }
-.time_line-page-event{
+.time_line-page-event {
+    font-family: "Montserrat";
+    font-size: 1.3rem;
     width: 60%;
+    font-weight: 500;
     text-align: left;
     padding-left: 10%;
     display: inline-block;
-    
 }
-.time_line-page-eventgrid{
+.time_line-page-eventgrid {
     display: grid;
     grid-auto-rows: minmax(25px, auto);
     row-gap: 0;
 }
-.time_line-page-para-line{
-    
+.time_line-page-para-line {
     align-self: center;
     margin: 0 auto;
     width: 90%;
     display: block;
-   
+
     margin-top: -20px;
-    filter: brightness(0) saturate(100%) invert(77%) sepia(60%) saturate(438%) hue-rotate(106deg) brightness(101%) contrast(99%);
+    filter: brightness(0) saturate(100%) invert(77%) sepia(60%) saturate(438%)
+        hue-rotate(106deg) brightness(101%) contrast(99%);
 }
-.time_line-page-eventblock{
+.time_line-page-eventblock {
     display: block;
 }
 
-.time_line-page-time{
+.time_line-page-time {
+    font-size: 1.4rem;
     width: 30%;
     display: inline-block;
 }
-.time_line-page-date{
-   
-    display: grid;
+.time_line-page-date {
+    /* display: grid;
+    */
     row-gap: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width: 800px) {
-    .time_line-page-event{
+    .time_line-page-event {
         font-size: 1rem;
     }
-    .time_line-page-time{
+    .time_line-page-time {
         font-size: 1rem;
     }
 }
 @media (max-width: 750px) {
     .time_line-page-heading {
-        font-size: 2rem;
+        font-size: 3.5rem;
         padding: 2rem;
         margin-bottom: 20px;
         padding-bottom: 1rem;
     }
-    .time_line-page-button{
+    .time_line-page-button {
         width: 50px;
         font-size: small;
         padding: 8px;
         margin-bottom: 15px;
-        
     }
-    .time_line-page-subheading{
+    .time_line-page-subheading {
         display: none;
-       
+
         padding: 1rem;
         font-size: 1rem;
     }
-    .time_line-page-subheading1{
-     
+    .time_line-page-subheading1 {
         padding: 1rem;
-      
+
         font-size: 1rem;
     }
-    .time_line-page-grid{
+    .time_line-page-grid {
         display: grid;
-        grid-template-rows: 1fr  auto ;
+        grid-template-rows: 1fr auto;
         grid-template-columns: unset;
     }
-    .time_line-page-para{
-        
+    .time_line-page-para {
         padding: 5px;
     }
-    .time_line-page-date{
+    .time_line-page-date {
         display: grid;
         grid-template-rows: unset;
         grid-template-columns: 1fr 1fr 1fr;
     }
-
 }
 
-@media (min-width: 750px){
-    .time_line-page-subheading1{
-       display: none;
+@media (min-width: 750px) {
+    .time_line-page-subheading1 {
+        display: none;
     }
 }
 /* .fixed-logo {
@@ -242,20 +235,19 @@
         padding: 1rem;
         text-align: center;
     }
-    .time_line-page-subheading{
+    .time_line-page-subheading {
         font-size: 1rem;
-       width: 90%;
+        width: 90%;
         margin: auto;
     }
-    .time_line-page-subheading1{
+    .time_line-page-subheading1 {
         font-size: 1rem;
-       width: 90%;
+        width: 90%;
         margin: auto;
     }
-   
-    .time_line-aboutcontent{
+
+    .time_line-aboutcontent {
         margin-left: 0rem !important;
-        
     }
 }
 
@@ -276,6 +268,3 @@ main {
     gap: 50px;
     align-items: center;
 }
-
-
-  
