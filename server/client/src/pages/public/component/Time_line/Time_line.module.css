@@ -1,7 +1,11 @@
 :root {
     --time_line-main-color: #49fed6;
 }
-
+.time_line_container{
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+}
 .time_line-page-heading {
     position: relative;
     margin: 0;
@@ -10,12 +14,11 @@
     text-align: left;
     font-size: 4rem;
     padding: 2.5rem;
-    margin-left: 3rem;
     letter-spacing: 2.5px;
     z-index: 1;
     margin-top: 50px;
     font-family: 'Android 101';
-    text-shadow: 0 0 1.5px var(--time_line-main-color);
+    text-shadow: var(--time_line-main-color) 0 0 7.5px;
     margin-bottom: 0;
     padding-bottom: 0;
 
@@ -173,7 +176,6 @@
     .time_line-page-heading {
         font-size: 2rem;
         padding: 2rem;
-        margin-left: 1.5rem;
         margin-bottom: 20px;
         padding-bottom: 1rem;
     }
@@ -236,9 +238,8 @@
         height: 150px;
     } */
     .time_line-page-heading {
-        font-size: 3rem;
+        font-size: 2.25rem;
         padding: 1rem;
-        margin-left: 1rem;
         text-align: center;
     }
     .time_line-page-subheading{

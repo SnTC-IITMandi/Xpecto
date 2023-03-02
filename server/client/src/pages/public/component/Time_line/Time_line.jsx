@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Time_line.module.css";
-import Layout from "../Layout/Layout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 const Time_line = () => {
@@ -95,67 +94,121 @@ const Time_line = () => {
     filterItem("3-03-23");
   }, [Timeline]);
   return (
-    <>
-      <Layout>
-        <div ref={aboutRef}
-          data-color="#49fed6" className={styles["header"]}>
-          <h1 className={styles["time_line-page-heading"]}>
-            TIMELINE 
-          </h1>
-          <h1 className={styles["time_line-page-subheading"]}>
-            {Heading}
-            <br />
-            <img className={styles["time_line-page-subheading-line"]} src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`} alt="" />
-          </h1>
-        </div>
-        <div className={styles["time_line-page-grid"]}>
-          <div className={styles["time_line-page-date"]}>
-            <div className={`${styles.button} ${activeButton === '3-03-23' ? styles.active : styles.end}`} >
-              <div className={styles["time_line-page-button"]} onClick={() => filterItem("3-03-23")}>
-                <span>3</span>
-                <br />
-                <span>March</span>
+      <>
+          <div
+              className={styles["time_line_container"]}
+              ref={aboutRef}
+              data-color="#49fed6"
+          >
+              <div className={styles["header"]}>
+                  <h1 className={styles["time_line-page-heading"]}>TIMELINE</h1>
+                  <h1 className={styles["time_line-page-subheading"]}>
+                      {Heading}
+                      <br />
+                      <img
+                          className={styles["time_line-page-subheading-line"]}
+                          src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`}
+                          alt=""
+                      />
+                  </h1>
               </div>
-            </div>
-            <div className={`${styles.button} ${activeButton === '4-03-23' ? styles.active : styles.end}`} >
-              <div className={styles["time_line-page-button"]} onClick={() => filterItem("4-03-23")}>
-                <span>4</span>
-                <br />
-                <span>March</span>
+              <div className={styles["time_line-page-grid"]}>
+                  <div className={styles["time_line-page-date"]}>
+                      <div
+                          className={`${styles.button} ${
+                              activeButton === "3-03-23"
+                                  ? styles.active
+                                  : styles.end
+                          }`}
+                      >
+                          <div
+                              className={styles["time_line-page-button"]}
+                              onClick={() => filterItem("3-03-23")}
+                          >
+                              <span>3</span>
+                              <br />
+                              <span>March</span>
+                          </div>
+                      </div>
+                      <div
+                          className={`${styles.button} ${
+                              activeButton === "4-03-23"
+                                  ? styles.active
+                                  : styles.end
+                          }`}
+                      >
+                          <div
+                              className={styles["time_line-page-button"]}
+                              onClick={() => filterItem("4-03-23")}
+                          >
+                              <span>4</span>
+                              <br />
+                              <span>March</span>
+                          </div>
+                      </div>
+                      <div
+                          className={`${styles.button} ${
+                              activeButton === "5-03-23"
+                                  ? styles.active
+                                  : styles.end
+                          }`}
+                      >
+                          <div
+                              className={styles["time_line-page-button"]}
+                              onClick={() => filterItem("5-03-23")}
+                          >
+                              <span>5</span>
+                              <br />
+                              <span>March</span>
+                          </div>
+                      </div>
+                  </div>
+                  <h1 className={styles["time_line-page-subheading1"]}>
+                      {Heading}
+                      <br />
+                      <img
+                          className={styles["time_line-page-subheading-line"]}
+                          src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`}
+                          alt=""
+                      />
+                  </h1>
+                  <div className={styles["time_line-page-para"]}>
+                      <div className={styles["time_line-page-eventgrid"]}>
+                          {TimelineData.map((curElem) => {
+                              const { eventname, eventtime, venue } = curElem;
+                              return (
+                                  <React.Fragment key={curElem._id}>
+                                      <div>
+                                          <div
+                                              className={
+                                                  styles["time_line-page-event"]
+                                              }
+                                          >
+                                              {eventname} <br /> ({venue})
+                                          </div>
+                                          <div
+                                              className={
+                                                  styles["time_line-page-time"]
+                                              }
+                                          >
+                                              {eventtime}
+                                          </div>
+                                      </div>
+                                      <img
+                                          className={
+                                              styles["time_line-page-para-line"]
+                                          }
+                                          src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`}
+                                          alt=""
+                                      />
+                                  </React.Fragment>
+                              );
+                          })}
+                      </div>
+                  </div>
               </div>
-            </div>
-            <div className={`${styles.button} ${activeButton === '5-03-23' ? styles.active : styles.end}`} >
-              <div className={styles["time_line-page-button"]} onClick={() => filterItem("5-03-23")}>
-                <span>5</span>
-                <br />
-                <span>March</span>
-              </div>
-            </div>
           </div>
-          <h1 className={styles["time_line-page-subheading1"]}>
-            {Heading}
-            <br />
-            <img className={styles["time_line-page-subheading-line"]} src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`} alt="" />
-          </h1>
-          <div className={styles["time_line-page-para"]}>
-            <div className={styles["time_line-page-eventgrid"]}>
-              {TimelineData.map((curElem) => {
-                const { eventname, eventtime,venue } = curElem;
-                return (
-                  <React.Fragment key={curElem._id}>
-                    <div >
-                      <div className={styles["time_line-page-event"]}>{eventname} <br /> ({venue})</div>
-                      <div className={styles["time_line-page-time"]}>{eventtime}</div>
-                    </div>
-                    <img className={styles["time_line-page-para-line"]} src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`} alt="" />
-                  </React.Fragment>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </Layout>
-    </>
+      </>
   );
 };
 
