@@ -29,6 +29,7 @@
   font-weight: 500;
   color: var(--main-contact-color);
   font-family: "Android 101";
+  margin-top: 125px;
 }
 .cards-container {
   display: flex;

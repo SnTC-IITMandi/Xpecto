@@ -75,7 +75,7 @@ const Time_line = () => {
   const getTimeline = async () => {
     try {
 
-      const url = 'http://localhost:9000/api/timeline/';
+      const url = `${process.env.REACT_APP_BACKENDURL}/api/timeline/`;
       const data = await axios.get(url);
 
       setTimeline((prev) => data.data.data);
@@ -97,10 +97,10 @@ const Time_line = () => {
   return (
     <>
       <Layout>
-        <div  ref={aboutRef}
-        data-color="#49fed6" className={styles["header"]}>
+        <div ref={aboutRef}
+          data-color="#49fed6" className={styles["header"]}>
           <h1 className={styles["time_line-page-heading"]}>
-            TIMELINE
+            TIMELINE 
           </h1>
           <h1 className={styles["time_line-page-subheading"]}>
             {Heading}
@@ -110,21 +110,21 @@ const Time_line = () => {
         </div>
         <div className={styles["time_line-page-grid"]}>
           <div className={styles["time_line-page-date"]}>
-            <div className={`${styles.button} ${activeButton === '3-03-23' ? styles.active : ''}`} >
+            <div className={`${styles.button} ${activeButton === '3-03-23' ? styles.active : styles.end}`} >
               <div className={styles["time_line-page-button"]} onClick={() => filterItem("3-03-23")}>
                 <span>3</span>
                 <br />
                 <span>March</span>
               </div>
             </div>
-            <div className={`${styles.button} ${activeButton === '4-03-23' ? styles.active : ''}`} >
+            <div className={`${styles.button} ${activeButton === '4-03-23' ? styles.active : styles.end}`} >
               <div className={styles["time_line-page-button"]} onClick={() => filterItem("4-03-23")}>
                 <span>4</span>
                 <br />
                 <span>March</span>
               </div>
             </div>
-            <div className={`${styles.button} ${activeButton === '5-03-23' ? styles.active : ''}`} >
+            <div className={`${styles.button} ${activeButton === '5-03-23' ? styles.active : styles.end}`} >
               <div className={styles["time_line-page-button"]} onClick={() => filterItem("5-03-23")}>
                 <span>5</span>
                 <br />
@@ -132,14 +132,19 @@ const Time_line = () => {
               </div>
             </div>
           </div>
+          <h1 className={styles["time_line-page-subheading1"]}>
+            {Heading}
+            <br />
+            <img className={styles["time_line-page-subheading-line"]} src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`} alt="" />
+          </h1>
           <div className={styles["time_line-page-para"]}>
             <div className={styles["time_line-page-eventgrid"]}>
               {TimelineData.map((curElem) => {
-                const { eventname, eventtime } = curElem;
+                const { eventname, eventtime,venue } = curElem;
                 return (
                   <React.Fragment key={curElem._id}>
                     <div >
-                      <div className={styles["time_line-page-event"]}>{eventname}</div>
+                      <div className={styles["time_line-page-event"]}>{eventname} <br /> ({venue})</div>
                       <div className={styles["time_line-page-time"]}>{eventtime}</div>
                     </div>
                     <img className={styles["time_line-page-para-line"]} src={`${process.env.PUBLIC_URL}/timeline/line_head.svg`} alt="" />
