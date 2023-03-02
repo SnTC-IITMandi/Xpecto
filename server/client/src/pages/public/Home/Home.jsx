@@ -26,6 +26,7 @@ import LayoutPage from "../component/Layout/Layout";
 import Contact from "../component/Contact/Contact";
 import { motion } from "framer-motion";
 import Time_line from "../component/Time_line/Time_line";
+import Pronight from "../component/pronight/Pronight";
 export default function Home() {
     const navigate = useNavigate();
 
@@ -259,6 +260,7 @@ export default function Home() {
                         ""
                     )}
                 </div>
+                <Pronight/>
                 <motion.div
                     initial={{ y: 0 }}
                     whileInView={{ y: 0 }}
@@ -270,6 +272,7 @@ export default function Home() {
                     className={styles["section1"]}
                     id="timeline"
                 >
+                    
                     <Time_line />
                 </motion.div>
                 <motion.div
