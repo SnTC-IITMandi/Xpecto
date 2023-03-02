@@ -19,10 +19,8 @@ const keytalkSchema = mongoose.Schema({
       },
     },
   ],
-  duration: {
-    type: Number,
-    min: [0, "Duration Can't be less than 0!"],
-    default: 0,
+  dateTime: {
+    type: String,
   },
   description: {
     type: String,

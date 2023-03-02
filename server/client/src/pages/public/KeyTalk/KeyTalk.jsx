@@ -87,15 +87,15 @@ const KeyTalkOne = ({ keytalk }) => {
         <div className={styles["keytalk__info"]}>
           <div className={styles["keytalk__info__heading"]}>
             <h1>{keytalk.title}</h1>
-            {keytalk.duration ? (
+            {keytalk.dateTime ? (
               <p className={styles["keytalk__info__duration"]}>
-                Duration: {keytalk.duration} min
+                {keytalk.dateTime}
               </p>
             ) : null}
           </div>
-          <div className={styles["keytalk__info__description"]}>
+          {keytalk?.description  && <div className={styles["keytalk__info__description"]}>
             <p>{keytalk.description}</p>
-          </div>
+          </div>}
         </div>
         <div className={styles["keytalk__speakers"]}>
           <h3>speakers</h3>
