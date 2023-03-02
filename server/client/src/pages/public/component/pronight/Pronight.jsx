@@ -38,7 +38,7 @@ export default function Pronight()
     ref={aboutRef}
         data-color="#F156FA"
         >
-        <p className={styles.heading}> PRONIGHTS</p>
+        <p className={styles.heading}> PRONITES</p>
         <Carousel>
             {
                 nightdata.map( (item, i) => <Item key={i} item={item} /> )
