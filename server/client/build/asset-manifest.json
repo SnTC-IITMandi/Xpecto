@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c0820977.css",
-    "main.js": "/static/js/main.0bed661e.js",
+    "main.css": "/static/css/main.4a9f679d.css",
+    "main.js": "/static/js/main.4bf09081.js",
     "static/media/background.jpg": "/static/media/background.abe945b916887ee0ac0c.jpg",
     "static/media/Android_101.ttf": "/static/media/Android_101.1bc6db32b397d97d519e.ttf",
     "static/media/xpecto-logo.svg": "/static/media/xpecto-logo.b0d4bce09155c16434fd6d78749f0643.svg",
@@ -10,11 +10,11 @@
     "static/media/navbar-top.svg": "/static/media/navbar-top.7abe0c45c72fc1e2f738cd157ab34d4c.svg",
     "static/media/navbar-middle.svg": "/static/media/navbar-middle.9a9ce96f0b15ba41b85ab67c8e5f0edd.svg",
     "static/media/backtop-btn.svg": "/static/media/backtop-btn.b31183adcdf67ebce747833031f5909f.svg",
-    "main.c0820977.css.map": "/static/css/main.c0820977.css.map",
-    "main.0bed661e.js.map": "/static/js/main.0bed661e.js.map"
+    "main.4a9f679d.css.map": "/static/css/main.4a9f679d.css.map",
+    "main.4bf09081.js.map": "/static/js/main.4bf09081.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0820977.css",
-    "static/js/main.0bed661e.js"
+    "static/css/main.4a9f679d.css",
+    "static/js/main.4bf09081.js"
   ]
 }
