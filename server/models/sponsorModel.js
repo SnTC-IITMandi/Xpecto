@@ -24,6 +24,9 @@ const sponsorSchema = mongoose.Schema({
         default: Date.now(),
         select: false,
     },
+    website:{
+        type:String
+    }
 });
 
 const Sponsor = mongoose.model("Sponsor", sponsorSchema);

@@ -5,7 +5,8 @@ import axios from "axios";
 import { ReactComponent as BackToTop } from "../../../svg/backtop-btn.svg";
 import { HashLink } from "react-router-hash-link";
 import { ThreeCircles } from "react-loader-spinner";
-
+import { Tooltip } from "@mui/material";
+import Fade from '@mui/material/Fade';
 const SponsorsNew = () => {
     const [sponsors, setSponsors] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -93,9 +94,10 @@ const SponsorsNew = () => {
     );
 };
 
-const SponsorCard = ({ name, type, logo }) => {
+const SponsorCard = ({ name, type, logo,website }) => {
     return (
-        <div className={styles["sponsors-container"]}>
+        <Tooltip title="Visit website" TransitionComponent={Fade}>
+       <a href={website} target="_blank" style={{textDecoration: 'none'}} className={styles["sponsorwebsite"]}> <div className={styles["sponsors-container"]}>
             <div className={styles["sponsor-card"]}>
                 <div className={styles["sponsor-card-inner-container"]}>
                     {logo && (
@@ -111,6 +113,8 @@ const SponsorCard = ({ name, type, logo }) => {
                 </div>
             </div>
         </div>
+        </a>
+        </Tooltip>
     );
 };
 export default SponsorsNew;
