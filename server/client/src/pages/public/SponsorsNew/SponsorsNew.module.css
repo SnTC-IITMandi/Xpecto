@@ -96,6 +96,9 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+.sponsorwebsite :hover{
+    scale: 1.01;
+}
 .sponsor-card-inner-container {
     padding: 20px;
     display: flex;
