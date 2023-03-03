@@ -273,7 +273,7 @@ export default function Home() {
                 >
                     <Time_line />
                 </motion.div>
-                <Pronight />
+                {/* <Pronight /> */}
                 <motion.div
                     initial={{ y: 0 }}
                     whileInView={{ y: 0 }}
